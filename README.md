@@ -1,7 +1,7 @@
  
 
 
-> Open this page at [https://InspiriaSCC.github.io/energispillet/](https://InspiriaSCC.github.io/energispillet/)
+> Open this page at [https://github.com/InspiriaSCC/Energispillet](https://github.com/InspiriaSCC/Energispillet)
 
 ## Tutorial links:
 * [Kodeøkt del 1 - Første del av spillet](https://arcade.makecode.com/#tutorial:github:InspiriaSCC/energispillet/tutorial01)
