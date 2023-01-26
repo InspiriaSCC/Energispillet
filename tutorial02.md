@@ -143,9 +143,9 @@ verden. Det ene landet skal få mye energi, mens det andre landet skal få lite 
 ### Steg 1
 Vi begynner med å plassere energien slik at det er størst sannsynlighet 
 for at den havner i det sandfargede landet. 
-I  ``||Loops.repeat||``-løkken legger vi inn en 
- ``||Logic:if true then else ||``-blokk fra ``||Logic.Logic||``-menyen. 
- Legg den under ``||variables. set energi to..||``
+I  ``||loops:repeat||``-løkken legger vi inn en 
+ ``||logic:if true then else ||``-blokk fra ``||logic:Logic||``-menyen. 
+ Legg den under ``||variables:set energi to..||``
 
 Tips: For å flytte en blokk holder du inne Ctrl samtidig som du tar tak 
 i blokka du ønsker å flytte.
@@ -209,8 +209,8 @@ info.startCountdown(10)
 
 ### Steg 2
 
-Der hvor det står ``||Logic.true ||`` skal vi plassere ``||Math.0% chance ||`` 
-fra ``||Math.Math||``-menyen. Skriv 80 der hvor det står 0.
+Der hvor det står ``||logic:true ||`` skal vi plassere ``||math:0% chance ||`` 
+fra ``||math:Math||``-menyen. Skriv 80 der hvor det står 0.
 ```block
 for (let index = 0; index < 100; index++) {
     energi = sprites.create(img`
@@ -244,8 +244,8 @@ for (let index = 0; index < 100; index++) {
 
 ### Steg 3
 Nå skal det være 80 % sannsynlighet for at energien havner i landet med 
-sandfarge. Flytt ``||scene.place energi on top of random ||`` inn i den 
-øverste av de ledige plassene i ``|| logic.if then else||``-blokken. 
+sandfarge. Flytt ``||scene:place energi on top of random ||`` inn i den 
+øverste av de ledige plassene i ``|| logic:if then else||``-blokken. 
 
 ```block
     
@@ -278,8 +278,8 @@ sandfarge. Flytt ``||scene.place energi on top of random ||`` inn i den
 ```
 
 ### Steg 4
-Det som legges under ``||Logic.else||`` vil få 20 % sannsynlighet. 
-Kopier ``||scene.place energi on top of random ||`` og legg den under ``||logic.else||``.
+Det som legges under ``||logic:else||`` vil få 20 % sannsynlighet. 
+Kopier ``||scene:place energi on top of random ||`` og legg den under ``||logic:else||``.
 Flisen må endres til grønn. 
 
 Tips: Du kan kopiere en blokk ved å høyreklikke på blokken og velge Duplicate.
@@ -313,15 +313,15 @@ for (let index = 0; index < 100; index++) {
 ```
 
 ### Steg 5
-Nå skal vi plassere ``||sprite.mySprite||`` på samme måte. 
+Nå skal vi plassere ``||sprite:mySprite||`` på samme måte. 
 Det skal være 20 % sannsynlighet for å starte spillet i landet med
 sandfarge, og 80 % for å starte i det grønne landet. 
 
-Finn en ny ``||Logic.if then else||``-blokk, og plasser den under 
-``||sprite.set mysprite to...||``.
+Finn en ny ``||logic:if then else||``-blokk, og plasser den under 
+``||sprite:set mysprite to...||``.
 
-Der det står ``||logic.true||`` skal vi ha en 
-``||math. 0% chance||``-blokk. Skriv 20 der det står 0. 
+Der det står ``||logic:true||`` skal vi ha en 
+``||math:0% chance||``-blokk. Skriv 20 der det står 0. 
 
 
 
@@ -354,10 +354,10 @@ if (Math.percentChance(20)) {
 ```
 
 ### Steg 6
-Flytt ``||scene.place mySprite on top of random...||`` 
-til den øverste ledige plassen i ``||logic. if then else ||``. Da blir det 20 % 
+Flytt ``||scene:place mySprite on top of random...||`` 
+til den øverste ledige plassen i ``||logic:if then else ||``. Da blir det 20 % 
 sannsynlighet for at spillfiguren havner i det sandfargete landet.
-Kopier ``||scene.place mySprite on top of random...||`` og legg den nederst i ``||logic. if then else ||``. Forandre flisen til grønn. 
+Kopier ``||scene:place mySprite on top of random...||`` og legg den nederst i ``||logic:if then else ||``. Forandre flisen til grønn. 
 
 ```block
 let mySprite = sprites.create(img`
@@ -388,8 +388,8 @@ if (Math.percentChance(20)) {
 
 ### Steg 7
 Til slutt skal du ha med at du må få 20 poeng eller mer for å vinne spillet.
-Begynn med å legge inn  ``||info. on countdown end||``  fra ``||Info.Info||``-menyen. 
-Legg inn en ``||logic.if then else||``-blokk i ``||info. on countdown end||``. 
+Begynn med å legge inn  ``||info:on countdown end||``  fra ``||Info:Info||``-menyen. 
+Legg inn en ``||logic:if then else||``-blokk i ``||info:on countdown end||``. 
 
 ```block
 info.onCountdownEnd(function () {
@@ -401,12 +401,12 @@ info.onCountdownEnd(function () {
 ```
 
 ### Steg 8
-Der hvor det står ``||Logic.true||`` skal vi nå sammenligne to tall. 
-I ``||Logic.Logic||``-menyen finner du ``||logic. 0 < 0||``, denne 
-legges inn der det står ``||logic.true||``.
+Der hvor det står ``||logic:true||`` skal vi nå sammenligne to tall. 
+I ``||logic:Logic||``-menyen finner du ``||logic:0 < 0||``, denne 
+legges inn der det står ``||logic:true||``.
 
-Hent variabelen ``||Info.score||`` fra ``||Info.Info||``-menyen og 
-legg denne inn som første tall i ``||logic. 0 < 0||``-blokken. 
+Hent variabelen ``||info:score||`` fra ``||info:Info||``-menyen og 
+legg denne inn som første tall i ``||logic:0 < 0||``-blokken. 
 Den andre 0-en endres til 20.
 
 ```blocks
@@ -420,11 +420,11 @@ info.onCountdownEnd(function () {
 
 ```
 ### Steg 9
-Nå gjenstår det bare å hente to ``||Game.game over||``-blokker 
-fra ``||Game.Game||``-menyen. Disse legges inn under ``||logic.if||`` 
-og ``||logic.else||``. 
+Nå gjenstår det bare å hente to ``||game:game over||``-blokker 
+fra ``||game:Game||``-menyen. Disse legges inn under ``||logic:if||`` 
+og ``||logic:else||``. 
 
-Hvilken skal endres til ``||game.WIN||`` og hvilken til ``||game.LOSE||`` ? 
+Hvilken skal endres til ``||game:WIN||`` og hvilken til ``||game:LOSE||`` ? 
 
 ```blocks
 info.onCountdownEnd(function () {

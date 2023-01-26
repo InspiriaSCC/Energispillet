@@ -162,8 +162,8 @@ info.startCountdown(10)
 Vi fortsetter der vi slapp. Nå skal vi legge til en fornybar energikilde. La oss legge til havvind!
 
 ### Steg 2
-Det første vi trenger er en ny ``||loops.repeat||``-blokk for å fordele den nye energien på spillbrettet vårt.
-Hent en ny ``||loops.repeat||``-blokk og legg den nederst i ``||Loops.on start||``. Endre antall repetisjoner til 200.
+Det første vi trenger er en ny ``||loops:repeat||``-blokk for å fordele den nye energien på spillbrettet vårt.
+Hent en ny ``||loops:repeat||``-blokk og legg den nederst i ``||loops:on start||``. Endre antall repetisjoner til 200.
  
 
 ```blocks
@@ -227,8 +227,8 @@ info.startCountdown(10)
 
 ### Steg 3
 
-Inni den nye ``||loops.repeat ||``-blokken trenger vi nå en ny ``||sprite.set mySprite to...||``-blokk fra
- ``||Sprites.Sprites||``-menyen. Klikk på ``||Variables.mySprite2||`` og lag en ny variabel. Kall den gjerne "havvind". Klikk på ``||Sprites.Player||`` og lag en ny type sprite (add a new kind...) du kan kalle "Fornybar". Klikk på det grå kvadratet og tegn den nye havvindenergien din.
+Inni den nye ``||loops:repeat ||``-blokken trenger vi nå en ny ``||sprite:set mySprite to...||``-blokk fra
+ ``||sprites:Sprites||``-menyen. Klikk på ``||variables:mySprite2||`` og lag en ny variabel. Kall den gjerne "havvind". Klikk på ``||sprites:Player||`` og lag en ny type sprite (add a new kind...) du kan kalle "Fornybar". Klikk på det grå kvadratet og tegn den nye havvindenergien din.
 
 ```blocks
 namespace SpriteKind {
@@ -312,8 +312,8 @@ info.startCountdown(10)
 
 
 ### Steg 4
-Vi vil at ``||Variables.havvind||`` skal dukke opp ute i havet. Hent en ``||scene.place energy on top of random ||``-blokk fra 
-``||Scene.Scene||``-menyen og plasser den inni ``||Loops.repeat||``-blokken. Endre ``||Variables.mySprite2||`` til ``||Variables.havvind||``. Du skal ikke forandre flisen.
+Vi vil at ``||variables:havvind||`` skal dukke opp ute i havet. Hent en ``||scene:place energy on top of random ||``-blokk fra 
+``||scene:Scene||``-menyen og plasser den inni ``||loops:repeat||``-blokken. Endre ``||variables:mySprite2||`` til ``||variables:havvind||``. Du skal ikke forandre flisen.
 Når vi ikke definerer en bestemt type flis (tile), vil den nye energitypen dukke opp der det ikke er lagt noen fliser på brettet, altså ute i havet.
 
 ```blocks
@@ -397,7 +397,7 @@ info.startCountdown(10)
 ```
 
 ### Steg 5
-Vi trenger en ny ``||Sprites.overlap||``-blokk for å fange den nye energitypen. Hent den fra ``||Sprites.Sprites||``-menyen og plasser en ``||Info.change score by 1||``-blokk fra ``||Info.Info||``-menyen inni den.
+Vi trenger en ny ``||sprites:overlap||``-blokk for å fange den nye energitypen. Hent den fra ``||sprites:Sprites||``-menyen og plasser en ``||info:change score by 1||``-blokk fra ``||info:Info||``-menyen inni den.
 
 ```blocks
 namespace SpriteKind {
@@ -410,7 +410,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Fornybar, function (sprite, othe
 ```
 
 ### Steg 6
-Siden den nye energitypen vår er fornybar, ønsker vi ikke å fjerne ``||Variables.havvind||`` helt når vi overlapper. I stedet for å bruke en ``||Sprites.destroy otherSprite||``-blokk skal vi bruke en ``||Scene.Place mySprite on top of random||``-blokk for å få den fornybare energien til å gjenoppstå et tilfeldig sted i havet. Husk å dra ``||Variables.otherSprite||`` til der det står ``||Variables.mySprite||``, endre kind til ``||Sprites.Fornybar||`` og la det grå kvadratet være som det er.
+Siden den nye energitypen vår er fornybar, ønsker vi ikke å fjerne ``||variables:havvind||`` helt når vi overlapper. I stedet for å bruke en ``||sprites:destroy otherSprite||``-blokk skal vi bruke en ``||scene:Place mySprite on top of random||``-blokk for å få den fornybare energien til å gjenoppstå et tilfeldig sted i havet. Husk å dra ``||variables:otherSprite||`` til der det står ``||variables:mySprite||``, endre kind til ``||sprites:Fornybar||`` og la det grå kvadratet være som det er.
 
 ```blocks
 namespace SpriteKind {
