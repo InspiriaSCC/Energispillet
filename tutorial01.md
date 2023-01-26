@@ -254,7 +254,7 @@ energi = sprites.create(img`
 ## Plassering av sprites
 
 ### Steg 2
-Få spillfiguren til å bli plassert på et tilfeldig sted på skjermen. Fra ``||Scene.Scene||``-menyen finner du en ``||Scene.place mySprite on top of random...||``-blokk. Legg denne i ``||loops.on start||``, under ``||Variables.set mySprite to...||`` og velg den sandfargede/grå flisen (tile). 
+Få spillfiguren til å bli plassert på et tilfeldig sted på skjermen. Fra ``||scene:Scene||``-menyen finner du en ``||scene:place mySprite on top of random...||``-blokk. Legg denne i ``||loops:on start||``, under ``||variables:set mySprite to...||`` og velg den sandfargede/grå flisen (tile). 
 
 ```blocks
 tiles.setTilemap(tilemap`level1`)
@@ -304,7 +304,7 @@ let energi = sprites.create(img`
 
 
 ### Steg 3
-Energi-spriten (lynet) skal også plasseres på et tilfeldig sted. Finn en ``||Scene.place mySprite on top of random...||``-blokk og legg under ``||variables.set energi to...||``. Her må du forandre mySprite til energi og velg den sandfargede/grå flisen. 
+Energi-spriten (lynet) skal også plasseres på et tilfeldig sted. Finn en ``||scene:place mySprite on top of random...||``-blokk og legg under ``||variables:set energi to...||``. Her må du forandre mySprite til energi og velg den sandfargede/grå flisen. 
 
 ```blocks
 tiles.setTilemap(tilemap`level1`)
@@ -354,7 +354,7 @@ tiles.placeOnRandomTile(energi, sprites.castle.tilePath5)
 ```
 
 ### Steg 4
-Vi trenger flere energi-sprites. Bruk en ``||loops.repeat||``-løkke fra ``||loops.loops||``-menyen for å gjenta de to nederste blokkene i ``||loops.on start||`` for eksempel 100 ganger.
+Vi trenger flere energi-sprites. Bruk en ``||loops:repeat||``-løkke fra ``||loops:loops||``-menyen for å gjenta de to nederste blokkene i ``||loops:on start||`` for eksempel 100 ganger.
 Tips: Hold inne Ctrl-knappen for å flytte en og en blokk.
 
 ```blocks
@@ -411,7 +411,7 @@ for (let index = 0; index < 100; index++) {
 
 ### Steg 5
 
-Når spilleren vår treffer et lyn, vil vi at dette skal forsvinne. I ``||Sprites.Sprites||``-menyen finner du en ``||Sprites.on sprite of kind Player overlaps...||``. Legg denne hvor som helst på skjermen. Forandre det slik at ``||variables.otherSprite||`` er av typen ``||Sprites.Food||``.
+Når spilleren vår treffer et lyn, vil vi at dette skal forsvinne. I ``||sprites:Sprites||``-menyen finner du en ``||sprites:on sprite of kind Player overlaps...||``. Legg denne hvor som helst på skjermen. Forandre det slik at ``||variables:otherSprite||`` er av typen ``||sprites:Food||``.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
@@ -420,7 +420,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ### Steg 6
 Inni blokken du nettopp lagde, plasserer du først en ``||Sprites.destroy mySprite||``-blokk. 
-Klikk på variabelen ``||Variables.otherSprite||`` og dra den inn der det står  ``||Variables.mySprite||``.
+Klikk på variabelen ``||variables:otherSprite||`` og dra den inn der det står  ``||variables:mySprite||``.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
@@ -431,7 +431,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ### Steg 7
 
-Vi må også telle poeng. I ``||Info.Info||``-menyen finner du ``||Info.change score by..||``. Legg denne i ``||Sprites.overlap||``-blokka. Test spillet og se at du får poeng når du fanger energi.
+Vi må også telle poeng. I ``||info:Info||``-menyen finner du ``||info:change score by..||``. Legg denne i ``||sprites:overlap||``-blokka. Test spillet og se at du får poeng når du fanger energi.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
@@ -445,7 +445,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ### Steg 8
 
-Til slutt tar vi med en nedtelling. Nederst i ``||Loops.on start||`` legger du en ``||Info.start countdown||``-blokk. Du kan forandre tiden spillet varer hvis du vil.
+Til slutt tar vi med en nedtelling. Nederst i ``||loops:on start||`` legger du en ``||info:start countdown||``-blokk. Du kan forandre tiden spillet varer hvis du vil.
 
 ```blocks
 let energi: Sprite = null

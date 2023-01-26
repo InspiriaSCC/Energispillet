@@ -189,7 +189,7 @@ Ved hjelp av litt ekstra kode kan du gjøre spillfiguren din levende. Klikk deg 
 
 ### Steg 1
 For at animasjonen skal spilles av riktig, må vi tvinge spillet til å oppdateres omtrent tre ganger i sekundet.
-Til det trenger vi blokken ``||Game.on game update every 500 ms||``. Hent en fra ``||Game.Game||``-menyen (under "Advanced") og endre 500 til 300 ms.
+Til det trenger vi blokken ``||game:on game update every 500 ms||``. Hent en fra ``||game:Game||``-menyen (under "Advanced") og endre 500 til 300 ms.
 
 ```blocks
 game.onUpdateInterval(300, function () {})
