@@ -419,7 +419,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ```
 
 ### Steg 6
-Inni blokken du nettopp lagde, plasserer du først en ``||Sprites.destroy mySprite||``-blokk. 
+Inni blokken du nettopp lagde, plasserer du først en ``||Sprites:destroy mySprite||``-blokk. 
 Klikk på variabelen ``||variables:otherSprite||`` og dra den inn der det står  ``||variables:mySprite||``.
 
 ```blocks

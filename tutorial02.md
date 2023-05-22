@@ -144,7 +144,7 @@ verden. Det ene landet skal få mye energi, mens det andre landet skal få lite 
 Vi begynner med å plassere energien slik at det er størst sannsynlighet 
 for at den havner i det sandfargede landet. 
 I  ``||loops:repeat||``-løkken legger vi inn en 
- ``||logic:if true then else ||``-blokk fra ``||logic:Logic||``-menyen. 
+ ``||logic:if true then else||``-blokk fra ``||logic:Logic||``-menyen. 
  Legg den under ``||variables:set energi to..||``
 
 Tips: For å flytte en blokk holder du inne Ctrl samtidig som du tar tak 
