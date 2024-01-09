@@ -358,6 +358,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 ### Steg 11
 Og det var det! Nå har du laget en tyv til spillet ditt! Om du vil gjøre det enda mer interessant, kan du jo la tyven være en skikkelig skurk som tar liv fra deg også. I så fall må du utforske hvordan du kan bruke ``||info:set life to||``-blokken i hovedkoden din og ``||info:change life by -1||``-blokker inni en ``||sprites:overlap||``-blokk. Kanskje du mister et liv når du møter en skurk? Du kan se et lite eksempel i hintet her.
+Eller er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
 ```block
 namespace SpriteKind {
     export const Energy = SpriteKind.create()

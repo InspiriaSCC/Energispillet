@@ -254,6 +254,7 @@ tiles.placeOnRandomTile(grensevakt, sprites.builtin.forestTiles0)
 Plasser vakten på feltet mellom de to områdene og hent inn en ``||sprites:overlap||``-blokk, slik at du kan kontrollere hva som skal skje hvis spilleren overlapper med vakten.
 
 Kanskje vakten slenger spilleren tilbake til et tilfeldig felt inne på området sitt? Kanskje spilleren kan komme forbi hvis den har klart å samle nok energi først? Går det an å bestikke vakten med litt energi, kanskje? Eller kan spilleren klare å snike seg forbi på et vis?
+Eller er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
 ```blocks
 namespace SpriteKind {
     export const Vakt = SpriteKind.create()

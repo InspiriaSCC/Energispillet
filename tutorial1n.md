@@ -425,4 +425,5 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Fornybar, function (sprite, othe
 
 ### Steg 7
 Det var det hele! Nå kan du lage både fornybare og ikke-fornybare energikilder! Om du vil, kan du lage flere energikilder av forskjellig type til spillet.
+Eller er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
