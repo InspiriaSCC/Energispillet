@@ -441,7 +441,7 @@ info.onCountdownEnd(function () {
 
 Bra jobba! Nå er du godt i gang med å programmere ditt eget spill😊
 Hvor mange poeng klarer du å få, og hvem er best i klassen?  
-Er du klar for flere utfordringer? Gå til [Kodekraft](https://kodekraft.no)
+Er du klar for flere utfordringer? Gå til [Kodekraft.no](https://kodekraft.no) og prøv deg på noen av utvidelsene du finner der!
 
 ```blocks
 info.onCountdownEnd(function () {
