@@ -224,7 +224,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ### Steg 4
 Hent en ``||sprites:set projectile to projectile from mySprite with vx 50 vy 50||`` fra ``||sprites:Sprites||``-menyen og legg den inn i det første gapet på ``||logic:if true then else||``-blokken.
-Endre vx til -200 og vy til 0. Du må skrive inn tallet 200. Slideren på blokken går bare til 100, som er like fort som spillfiguren din beveger seg.
+Endre vx til -200 og vy til 0. Du må skrive inn tallet -200. Slideren på blokken går bare til 100, som er like fort som spillfiguren din beveger seg.
 Vx er farten i x-retningen. Når den er negativ går prosjektilet mot venstre. Vy er farten i y-retningen.
 
 ```blocks
