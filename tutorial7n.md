@@ -383,6 +383,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             . . . . . . . . . . . . . . . . 
             `, mySprite, -200, 0)
     } else if (controller.right.isPressed()) {
+        // @highlight
         projectile = sprites.createProjectileFromSprite(img`
             . . . . . . b b b b a a . . . . 
             . . . . b b d d d 3 3 3 a a . . 
@@ -507,6 +508,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             . . . . . . . . . . . . . . . . 
             `, mySprite, 200, 0)
     } else if (controller.down.isPressed()) {
+        // @highlight
         projectile = sprites.createProjectileFromSprite(img`
             . . . . . . b b b b a a . . . . 
             . . . . b b d d d 3 3 3 a a . . 
@@ -596,6 +598,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             . . . . . . . . . . . . . . . . 
             `, mySprite, 0, 200)
     } else {
+        // @highlight
         projectile = sprites.createProjectileFromSprite(img`
             . . . . . . b b b b a a . . . . 
             . . . . b b d d d 3 3 3 a a . . 

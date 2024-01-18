@@ -235,7 +235,7 @@ game.onUpdateInterval(300, function () {
 
 ### Steg 4
 Nå skal vi få figuren til å bevege seg når går til venstre. 
-Hent en ``||controller:is A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den der det står ``||logic:true||`` i ``||Logic.if then else||``-blokken. Trykk på den lille pilen til høyre for "A" og velg "left" fra menyen som dukker opp.
+Hent en ``||controller:is A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den der det står ``||logic:true||`` i ``||logic:if then else||``-blokken. Trykk på den lille pilen til høyre for "A" og velg "left" fra menyen som dukker opp.
 
 ```blocks
 game.onUpdateInterval(300, function () {
@@ -254,7 +254,7 @@ game.onUpdateInterval(300, function () {
 ```
 
 ### Steg 5
-Hent en ``||animation:animate mySprite||``-blokk fra ``||animation:Animation||``-menyen (under "Advanced") og plasser den i det øverste gapet i ``||Logic.if then else||``-blokken.
+Hent en ``||animation:animate mySprite||``-blokk fra ``||animation:Animation||``-menyen (under "Advanced") og plasser den i det øverste gapet i ``||logic:if then else||``-blokken.
 ```blocks
 game.onUpdateInterval(300, function () {
     if (controller.left.isPressed()) {
