@@ -15,6 +15,7 @@
 * [Tutorial 6 - Grensekontroll](https://arcade.makecode.com/#tutorial:github:InspiriaSCC/energispillet/tutorial6n)
 * [Tutorial 7 - Forsvar og prosjektiler](https://arcade.makecode.com/#tutorial:github:inspiriascc/energispillet/tutorial7n)
 
+
 ## Edit this project ![Build status badge](https://github.com/InspiriaSCC/energispillet/workflows/MakeCode/badge.svg)
 
 To edit this repository in MakeCode.
