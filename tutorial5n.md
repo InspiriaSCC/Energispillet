@@ -192,7 +192,7 @@ info.player2.setLife(3)
 ```
 
 ### Steg 2
-Hent en ``||info:change player2 life by -1||``-blokk fra ``||info:Info||``-menyen og plasser den inni ``||sprites:overlap||``-blokken som styrer hva som skjer når spilleren plukker opp et lyn. Nå representerer lynene fossile drivstoff som påvirker miljøet negativt.
+Hent en ``||info:change player2 life by -1||``-blokk fra ``||info:Info||``-menyen og plasser den inni ``||sprites:overlap||``-blokken som styrer hva som skjer når spilleren plukker opp et lyn. Nå representerer lynene fossil energi som påvirker miljøet negativt.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
