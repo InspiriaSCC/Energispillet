@@ -231,7 +231,7 @@ game.onUpdateInterval(300, function () {
 
 ### Steg 4
 Nå skal du få figuren til å bevege seg når den går til venstre. 
-Hent en ``||controller:is A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den der det står ``||logic:true||`` i ``||Logic.if then else||``-blokken. Trykk på den lille pilen til høyre for "A" og velg "left" fra menyen som dukker opp.
+Hent en ``||controller:is A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den der det står ``||logic:true||`` i ``||Logic:if then else||``-blokken. Trykk på den lille pilen til høyre for "A" og velg "left" fra menyen som dukker opp.
 
 ```blocks
 game.onUpdateInterval(300, function () {
@@ -250,7 +250,7 @@ game.onUpdateInterval(300, function () {
 ```
 
 ### Steg 5
-Hent en ``||animation:animate mySprite||``-blokk fra ``||animation:Animation||``-menyen (under "Advanced") og plasser den i det øverste gapet i ``||Logic.if then else||``-blokken.
+Hent en ``||animation:animate mySprite||``-blokk fra ``||animation:Animation||``-menyen (under "Advanced") og plasser den i det øverste gapet i ``||Logic:if then else||``-blokken.
 
 ```blocks
 game.onUpdateInterval(300, function () {
@@ -410,7 +410,6 @@ game.onUpdateInterval(300, function () {
 ### Steg 8
 
 Gjør det samme med de tre andre retningene. Husk å velge riktig animasjon og å sette tiden til 100 ms.
-I det siste gapet i ``||logic:if then else||``-blokken setter du inn en ``||sprites:set mySprite image to||``-blokk og velg bildet der spillfiguren står vendt mot skjermen.
 
 ```blocks
 let mySprite: Sprite = null 
