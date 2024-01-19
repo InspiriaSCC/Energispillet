@@ -185,8 +185,8 @@ info.startCountdown(10)
 Et dataspill blir litt flatt og kjedelig uten lydeffekter. La oss legge til noen!
 
 ### Steg 1
-Legg til en lyd når spilleren plukker opp energi. Hent en ``||music:play sound||``-blokk fra ``||music:Music||``-menyen og plasser den inni ``||sprites:overlap||``-blokken som bestemmer hva som skjer når du fanger et lyn.
-
+Legg til en lyd når spillfiguren plukker opp energi. Hent en ``||music:play sound||``-blokk fra ``||music:Music||``-menyen og plasser den inni ``||sprites:overlap||``-blokken som bestemmer hva som skjer når du fanger et lyn.
+Gjør det samme for havvind.
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
@@ -198,7 +198,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ### Steg 2
 
-Du kan velge mellom flere lyder om du trykker på den lille pilen ved siden av der det står ``||music:ba ding||`` i ``||music:play sound||``-blokken. Prøv litt forskjellige og finn en du liker. Nå kan du gjenta disse stegene for de andre energitypene dine.
+Du kan velge mellom flere lyder om du trykker på den lille pilen ved siden av der det står ``||music:ba ding||`` i ``||music:play sound||``-blokken.
+Finn noen lyder du liker, og bruk forskjellige lyder for de to energitypene.
 
 ```blocks
 namespace SpriteKind {

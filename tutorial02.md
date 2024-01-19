@@ -129,7 +129,7 @@ for (let index = 0; index < 100; index++) {
         `, SpriteKind.Food)
     tiles.placeOnRandomTile(energi, sprites.castle.tilePath5)
 }
-info.startCountdown(10)
+info.startCountdown(30)
 
 ```
 # Kodekraft: lag et energispill
@@ -203,7 +203,7 @@ for (let index = 0; index < 100; index++) {
     }
     tiles.placeOnRandomTile(energi, sprites.castle.tilePath5)
 }
-info.startCountdown(10)
+info.startCountdown(30)
 
 ```
 
@@ -506,7 +506,7 @@ for (let index = 0; index < 100; index++) {
         tiles.placeOnRandomTile(energi, sprites.castle.tileGrass1)
     }
 }
-info.startCountdown(10)
+info.startCountdown(30)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 ```

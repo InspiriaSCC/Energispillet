@@ -445,7 +445,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ### Steg 8
 
-Til slutt tar vi med en nedtelling. Nederst i ``||loops:on start||`` legger du en ``||info:start countdown||``-blokk. Du kan forandre tiden spillet varer hvis du vil.
+Til slutt tar vi med en nedtelling. Nederst i ``||loops:on start||`` legger du en ``||info:start countdown||``-blokk. Forandre tiden til 30 sekunder.
 
 ```blocks
 let energi: Sprite = null
@@ -494,7 +494,7 @@ for (let index = 0; index < 100; index++) {
     tiles.placeOnRandomTile(energi, sprites.castle.tilePath5)
 }
 // @highlight
-info.startCountdown(10)
+info.startCountdown(30)
 
 ```
 ### Steg 9

@@ -186,7 +186,7 @@ info.startCountdown(10)
 Nå skal vi gjøre spillet litt mer utfordrende. La oss legge til en rival! 
 
 ### Steg 1
-Begynn med å hente en ``||sprite:set mySprite2 to sprite of kind||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den inni ``||loops:on start||``-løkken din, gjerne nederst, under all den andre koden. Klikk på det grå kvadratet og velg en ny spillfigur fra galleriet. Velg en annen figur enn spillerfiguren din.
+Begynn med å hente en ``||sprite:set mySprite2 to sprite of kind||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den nederst i ``||loops:on start||``. Klikk på det grå kvadratet og velg en spillfigur fra galleriet.
 
 ```block
 let mySprite2 = sprites.create(img`
@@ -262,7 +262,7 @@ tiles.placeOnRandomTile(mySprite2, sprites.castle.tilePath5)
 ```
 
 ### Steg 4
-Nå skal vi få fienden til å bevege seg av seg selv. Det gjør vi ved å gi den nye spriten fart i en bestemt xy-retning. Hent en ``||sprites:set mysprite velocity to vx vy||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den under de to nye blokkene. Endre ``||variables:mySprite||`` til ``||variables:mySprite2||``. Du kan endre farten til fienden ved å endre på de to tallene i den nye blokken.
+Nå skal vi få fienden til å bevege seg av seg selv. Det gjør vi ved å gi den nye spriten fart i en bestemt xy-retning. Hent en ``||sprites:set mysprite velocity to vx vy||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den under ``||scene:place mysprite on top of random||``. Endre ``||variables:mySprite||`` til ``||variables:mySprite2||``. Du kan endre farten til fienden ved å endre på de to tallene bak vx og vy.
 
 ```block
 let mySprite2 = sprites.create(img`
@@ -289,8 +289,10 @@ mySprite2.setVelocity(50, 50)
 ```
 
 ### Steg 5
-For at ikke fienden bare skal forsvinne ut av spillområdet skal vi få den til å sprette når den treffer kanten av kartet. Hent en ``||sprites:set mySprite bounce on wall||``-blokk fra ``||sprites:Sprites||``-menyen og endre ``||variables:mySprite||`` til ``||variables:mySprite2||``.
-```block
+For at ikke fienden bare skal forsvinne ut av spillbrettet skal vi få den til å sprette når den treffer kanten. Hent en ``||sprites:set mySprite bounce on wall||``-blokk fra ``||sprites:Sprites||``-menyen og endre ``||variables:mySprite||`` til ``||variables:mySprite2||``.
+Om du vil ha flere fiender samtidig, legger du disse blokkene i en løkke.
+
+```blocks
 let mySprite2 = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
@@ -315,51 +317,50 @@ mySprite2.setVelocity(50, 50)
 mySprite2.setBounceOnWall(true)
 ```
 ### Steg 6
-Nå må du bestemme hva som skal skje når fienden finner energi på kartet. Da trenger du en ``||sprites:overlap||``-blokk fra ``||sprites:Sprites||``-menyen. Hent en!
+Nå må du bestemme hva som skal skje når fienden finner energi på land.
+Da trenger du en ``||sprites:overlap||``-blokk fra ``||sprites:Sprites||``-menyen.
+Endre det første stedet det står "Player" til "Enemy" og det andre stedet til "Food".
 
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Food, function (sprite, otherSprite) {
     
 })
 ```
 ### Steg 7
-Kanskje fienden skal få samle sin egen energi? I så fall må du lage ``||sprites:overlap||``-blokker for hver energitype i spillet. Du kan kopiere de du allerede har laget og bytte ut ``||info:change score by||``-blokkene med ``||info:change player 2 score by 1||``-blokker fra ``||info:Info||``-menyen og endre ``||sprites:Player||`` til ``||sprites:Enemy||`` i ``||sprites:overlap||``-blokken. Du kan gjøre omtrent det samme for alle energitypene. Husk at du må klikke og dra ``||variables:othersprite||``-variabelen inn i ``||sprites:destroy||``-blokken for at dette skal funke om du bruker en ny ``||sprites:destroy||``-blokk.
+Når rivalen din tar energi, forsvinner energien og du mister poeng.
+Legg inn en ``||sprites:destroy mySprite||`` og en ``||info:change score by||`` i overlap-blokken.
+Endre ``||sprites:destroy mySprite||`` til ``||sprites:destroy otherSprite||`` og ``||info:change score by 1||`` til ``||info:change score by -1||``.
+
 
 ```blocks
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
     // @highlight
-    info.player2.changeScoreBy(1)
+    info.changeScoreBy(-1)
 })
 ```
 ### Steg 8
-Hva skal skje når spillfiguren din treffer fienden? Kanskje fienden er en tyv som stjeler poeng fra deg? Det er opp til deg, men du trenger i alle fall å hente en ``||sprites:overlap||``-blokk og endre ``||sprites:Kind||`` til ``||sprites:Player||`` og ``||sprites:Enemy||``. Kanskje stjeler tyven ett eller flere poeng fra deg om de tar deg?
+
+Du kan gjøre det samme for havvind om du vil at fienden skal ta energi i havet også.
+
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+namespace SpriteKind {
+    export const Fornybar = SpriteKind.create()
+}
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Fornybar, function (sprite, otherSprite) {
     
 })
 ```
+
+
 ### Steg 9
-Her kommer nest siste hint om hvordan du lager en tyv. I dette tilfellet mister du et poeng, mens tyven får et. Hent en ``||info:change score by 1||``-blokk fra ``||info:Info||``-menyen, plasser den inni ``||sprites:overlap||``-blokken din og endre 1 til -1.
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    // @highlight
-    info.changeScoreBy(-1)
-})
-```
-### Steg 10
-Siden tyven stjeler poenget ditt må jo tyvens score øke tilsvarende. Hent en ``||info:change player 2 score by 1||``-blokk fra ``||info:Info||``-menyen og plasser den under ``||info:change score by||``-blokken i ``||sprites:overlap||``-blokken.
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    info.changeScoreBy(-1)
-    // @highlight
-    info.player2.changeScoreBy(1)
-})
-```
-### Steg 11
-Og det var det! Nå har du laget en tyv til spillet ditt! Om du vil gjøre det enda mer interessant, kan du jo la tyven være en skikkelig skurk som tar liv fra deg også. I så fall må du utforske hvordan du kan bruke ``||info:set life to||``-blokken i hovedkoden din og ``||info:change life by -1||``-blokker inni en ``||sprites:overlap||``-blokk. Kanskje du mister et liv når du møter en skurk? Du kan se et lite eksempel i hintet her.
+Om du vil gjøre det enda mer interessant, kan du jo la fienden ta liv fra deg også.
+I så fall må du utforske hvordan du kan bruke ``||info:set life to||``-blokken i hovedkoden din og ``||info:change life by -1||``-blokker inni en ``||sprites:overlap||``-blokk.
+Du kan se et lite eksempel i hintet.
+
 Eller er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
-```block
+
+```blocks
 namespace SpriteKind {
     export const Energy = SpriteKind.create()
 }

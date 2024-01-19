@@ -149,7 +149,7 @@ for (let index = 0; index < 100; index++) {
     }
 }
 
-info.startCountdown(10)
+info.startCountdown(30)
 
 
 
@@ -221,14 +221,14 @@ for (let index = 0; index < 100; index++) {
 // @highlight
 for (let index = 0; index < 200; index++) {   
 }
-info.startCountdown(10)
+info.startCountdown(30)
 
 ```
 
 ### Steg 3
 
 Inni den nye ``||loops:repeat ||``-blokken trenger vi nå en ny ``||sprite:set mySprite to...||``-blokk fra
- ``||sprites:Sprites||``-menyen. Klikk på ``||variables:mySprite2||`` og lag en ny variabel. Kall den gjerne "havvind". Klikk på ``||sprites:Player||`` og lag en ny type sprite (add a new kind...) du kan kalle "Fornybar". Klikk på det grå kvadratet og tegn den nye havvindenergien din.
+ ``||sprites:Sprites||``-menyen. Klikk på ``||variables:mySprite2||`` og lag en ny variabel. Kall den "havvind". Klikk på ``||sprites:Player||`` og lag en ny type sprite (Add a new kind...) du kan kalle "Fornybar". Klikk på det grå kvadratet og tegn det nye havvind-ikonet ditt.
 
 ```blocks
 namespace SpriteKind {
@@ -306,15 +306,16 @@ for (let index = 0; index < 200; index++) {
         `,SpriteKind.Fornybar)
        
 }
-info.startCountdown(10)
+info.startCountdown(30)
 
 ```
 
 
 ### Steg 4
 Vi vil at ``||variables:havvind||`` skal dukke opp ute i havet. Hent en ``||scene:place energy on top of random ||``-blokk fra 
-``||scene:Scene||``-menyen og plasser den inni ``||loops:repeat||``-blokken. Endre ``||variables:mySprite2||`` til ``||variables:havvind||``. Du skal ikke forandre flisen.
-Når vi ikke definerer en bestemt type flis (tile), vil den nye energitypen dukke opp der det ikke er lagt noen fliser på brettet, altså ute i havet.
+``||scene:Scene||``-menyen og plasser den inni ``||loops:repeat||``-blokken. Endre ``||variables:mySprite2||`` til ``||variables:havvind||``.
+Du skal ikke forandre flisen. Havvind-ikonene dukker nå opp ute i havet.
+
 
 ```blocks
 namespace SpriteKind {
@@ -392,7 +393,7 @@ for (let index = 0; index < 200; index++) {
     // @highlight
     tiles.placeOnRandomTile(havvind, assets.tile`tile0`)   
 }
-info.startCountdown(10)
+info.startCountdown(30)
 
 ```
 
