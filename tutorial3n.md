@@ -176,7 +176,7 @@ for (let index = 0; index < 200; index++) {
         `, SpriteKind.Fornybar)
     tiles.placeOnRandomTile(havvind, assets.tile`transparency16`)
 }
-info.startCountdown(10)
+info.startCountdown(30)
 
 ```
 # Rivaler - Legg til fiender i spillet ditt
@@ -292,7 +292,7 @@ mySprite2.setVelocity(50, 50)
 For at ikke fienden bare skal forsvinne ut av spillbrettet skal vi få den til å sprette når den treffer kanten. Hent en ``||sprites:set mySprite bounce on wall||``-blokk fra ``||sprites:Sprites||``-menyen og endre ``||variables:mySprite||`` til ``||variables:mySprite2||``.
 Om du vil ha flere fiender samtidig, legger du disse blokkene i en løkke.
 
-```blocks
+```block
 let mySprite2 = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
@@ -360,7 +360,7 @@ Du kan se et lite eksempel i hintet.
 
 Eller er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
 
-```blocks
+```block
 namespace SpriteKind {
     export const Energy = SpriteKind.create()
 }

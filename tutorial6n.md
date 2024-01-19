@@ -174,7 +174,7 @@ for (let index = 0; index < 200; index++) {
         `, SpriteKind.Fornybar)
     tiles.placeOnRandomTile(havvind, assets.tile`transparency16`)
 }
-info.startCountdown(10)
+info.startCountdown(30)
 ```
 
 # Grensekontroll - lag en usynlig grense og sett opp en grensevakt!

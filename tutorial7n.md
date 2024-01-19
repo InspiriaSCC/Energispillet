@@ -176,7 +176,7 @@ for (let index = 0; index < 200; index++) {
         `, SpriteKind.Fornybar)
     tiles.placeOnRandomTile(havvind, assets.tile`transparency16`)
 }
-info.startCountdown(10)
+info.startCountdown(30)
 
 ```
 # Rivaler - Legg til fiender i spillet ditt
@@ -618,6 +618,24 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 ### Steg 12
-Godt jobba! Det var nesten alt, men resten klarer du selv. Du bestemmer hva som skjer når prosjektilene dine treffer en rival eller en annen sprite.
-Bruk en ``||sprites:on sprite of kind player overlaps othersprite of kind player||``-blokk for å bestemme hva prosjektilene dine gjør i spillet.
-Lykke til!
+Nå trenger du en ``||sprites:on sprite of kind player overlaps othersprite of kind player||``-blokk. 
+Hent en fra ``||sprites:Sprites||``-menyen og legg den ut på bordet. Endre det første feltet der det står ``||sprites:Player||`` til ``||sprites:projectile||`` og det andre feltet til ``||sprites:Enemy||``.
+
+```blocks
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+	
+})
+```
+
+### Steg 13
+Når du treffer en fiende med et prosjektil, skal du få tilbake litt av energien fienden har tatt.
+Hent en ``||info:change score by 1||``-blokk fra ``||info:Info||``-menyen og legg den inn i ``||sprites:on sprite of Kind projectile overlaps othersprite of kind Enemy||``.
+
+```blocks
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+})
+```
+
+### Steg 14
+Det var alt! Nå vet du hvordan du lager rivaler i spillet ditt. Om du vil, kan du gå inn på [Kodekraft.no](https://kodekraft.no) og sjekke ut neste oppgave.
