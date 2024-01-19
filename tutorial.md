@@ -176,11 +176,8 @@ for (let index = 0; index < 200; index++) {
     tiles.placeOnRandomTile(havvind, assets.tile`transparency16`)
 }
 info.startCountdown(10)
-
-
-
-
 ```
+
 # Animasjoner - Gjør spillfiguren din levende
 ## Introduksjon
 ### Introduksjon @unplugged

@@ -1,7 +1,6 @@
 ### @activities true
 
 ```template
-
 namespace SpriteKind {
     export const Fornybar = SpriteKind.create()
 }
@@ -176,15 +175,15 @@ for (let index = 0; index < 200; index++) {
     tiles.placeOnRandomTile(havvind, assets.tile`transparency16`)
 }
 info.startCountdown(30)
-
 ```
+
 # Miljøpåvirkning - Redd planeten!
 ## Introduksjon
 ### Introduksjon @unplugged
 Hvordan påvirker forskjellige energikilder miljøet? Her er et forslag til hvordan man kan få spillet til å handle om å redde planeten.
 
-
 ### Steg 1
+
 Vi lar planeten selv være spiller nummer 2, slik at vi kan la innsamling av noen typer energi føre til at planeten mister liv. Hent en ``||info:set player2 life to 3||``-blokk fra ``||info:Info||``-menyen og plasser den under resten av koden din inni hoved-``||loops:on start||``-løkken, under resten av koden din. Du kan gi planeten mer liv om du synes 3 er litt lite.
 
 ```block
@@ -192,6 +191,7 @@ info.player2.setLife(3)
 ```
 
 ### Steg 2
+
 Hent en ``||info:change player2 life by -1||``-blokk fra ``||info:Info||``-menyen og plasser den inni ``||sprites:overlap||``-blokken som styrer hva som skjer når spilleren plukker opp et lyn. Nå representerer lynene fossile drivstoff som påvirker miljøet negativt.
 
 ```blocks
@@ -203,6 +203,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ```
 
 ### Steg 3
+
 I ditt eget spill kan du gjenta Steg 2 for alle ``||sprites:overlap||``-blokker som representerer fossile energikilder. Fornybare energikilder kan stå som de er, ettersom de ikke påvirker miljøet i like stor grad.
 
 ```blocks
@@ -216,7 +217,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Fossil, function (sprite, otherS
     info.player2.changeLifeBy(-1)
 })
 ```
+
 ### Steg 4
+
 Hva skjer når planeten går tom for liv? Det sier seg kanskje selv, men du må bruke en ``||info:on player 2 life zero||``-blokk fra ``||info:Info||``-menyen for at noe skal skje. Du kan for eksempel sette inn lyd fra ``||music:Music||``-menyen, animere skjermen med blokker fra ``||scene:Scene||``-menyen, eller kanskje bare sette inn en ``||game:game over||``-blokk fra ``||game:Game||``-menyen? (Advarsel: ``||game:game over||``-blokken vil gjøre du mister effekten av alle andre blokker inni ``||info:on life zero||``-blokken.)
 
 ```blocks
@@ -230,7 +233,9 @@ scene.cameraShake(4, 500)
 effects.confetti.startScreenEffect()
 game.over(false)
 ```
+
 ### Steg 5
+
 Det var alt om miljøpåvirkning.
 Her er en ekstra liten utfordring:
 Noen handlinger har positiv effekt på miljøet. Hva med å tilføye noen få sprites som gir liv til planeten når du plukker dem opp? Kanskje plastsøppel i havet? Hvilke blokker kan du bruke for å få til dette?

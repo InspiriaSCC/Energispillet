@@ -2,7 +2,6 @@
 
 
 ```template
-
 namespace SpriteKind {
     export const Fornybar = SpriteKind.create()
 }
@@ -177,8 +176,8 @@ for (let index = 0; index < 200; index++) {
     tiles.placeOnRandomTile(havvind, assets.tile`transparency16`)
 }
 info.startCountdown(30)
-
 ```
+
 # Rivaler - Legg til fiender i spillet ditt
 ## Introduksjon
 ### Introduksjon @unplugged
@@ -236,6 +235,7 @@ let mySprite2 = sprites.create(img`
 ```
 
 ### Steg 3
+
 Plasser den nye fienden på et tilfeldig sted ved å hente en ``||scene:place mysprite on top of random||``-blokk fra ``||scene:Scene||``-menyen og plasser den under den nye ``||variables:mySprite2||``-blokken. Endre ``||variables:mySprite||`` til ``||variables:mySprite2||``. Klikk på det grå kvadratet for å velge hvilken type flis (tile) fienden skal oppstå på.
 
 ```block
@@ -262,6 +262,7 @@ tiles.placeOnRandomTile(mySprite2, sprites.castle.tilePath5)
 ```
 
 ### Steg 4
+
 Nå skal vi få fienden til å bevege seg av seg selv. Det gjør vi ved å gi den nye spriten fart i en bestemt xy-retning. Hent en ``||sprites:set mysprite velocity to vx vy||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den under ``||scene:place mysprite on top of random||``. Endre ``||variables:mySprite||`` til ``||variables:mySprite2||``. Du kan endre farten til fienden ved å endre på de to tallene bak vx og vy.
 
 ```block
@@ -289,6 +290,7 @@ mySprite2.setVelocity(50, 50)
 ```
 
 ### Steg 5
+
 For at ikke fienden bare skal forsvinne ut av spillbrettet skal vi få den til å sprette når den treffer kanten. Hent en ``||sprites:set mySprite bounce on wall||``-blokk fra ``||sprites:Sprites||``-menyen og endre ``||variables:mySprite||`` til ``||variables:mySprite2||``.
 Om du vil ha flere fiender samtidig, legger du disse blokkene i en løkke.
 
@@ -316,7 +318,9 @@ mySprite2.setVelocity(50, 50)
 // @highlight
 mySprite2.setBounceOnWall(true)
 ```
+
 ### Steg 6
+
 Nå må du bestemme hva som skal skje når fienden finner energi på land.
 Da trenger du en ``||sprites:overlap||``-blokk fra ``||sprites:Sprites||``-menyen.
 Endre det første stedet det står "Player" til "Enemy" og det andre stedet til "Food".
@@ -339,6 +343,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Food, function (sprite, otherSpri
     info.changeScoreBy(-1)
 })
 ```
+
 ### Steg 8
 
 Du kan gjøre det samme for havvind om du vil at fienden skal ta energi i havet også.
@@ -352,12 +357,11 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Fornybar, function (sprite, other
 })
 ```
 
-
 ### Steg 9
+
 Om du vil gjøre det enda mer interessant, kan du jo la fienden ta liv fra deg også.
 I så fall må du utforske hvordan du kan bruke ``||info:set life to||``-blokken i hovedkoden din og ``||info:change life by -1||``-blokker inni en ``||sprites:overlap||``-blokk.
 Du kan se et lite eksempel i hintet.
-
 Eller er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
 
 ```block

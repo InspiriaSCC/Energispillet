@@ -150,11 +150,8 @@ for (let index = 0; index < 100; index++) {
 }
 
 info.startCountdown(30)
-
-
-
-
 ```
+
 # Lag en fornybar energikilde
 ## Introduksjon
 ### Introduksjon @unplugged
@@ -165,9 +162,7 @@ Vi fortsetter der vi slapp. Nå skal vi legge til en fornybar energikilde. La os
 Det første vi trenger er en ny ``||loops:repeat||``-blokk for å fordele den nye energien på spillbrettet vårt.
 Hent en ny ``||loops:repeat||``-blokk og legg den nederst i ``||loops:on start||``. Endre antall repetisjoner til 200.
  
-
 ```blocks
-
 let energi: Sprite = null
 tiles.setTilemap(tilemap`level1`)
 scene.setBackgroundColor(9)
@@ -222,7 +217,6 @@ for (let index = 0; index < 100; index++) {
 for (let index = 0; index < 200; index++) {   
 }
 info.startCountdown(30)
-
 ```
 
 ### Steg 3
@@ -307,15 +301,12 @@ for (let index = 0; index < 200; index++) {
        
 }
 info.startCountdown(30)
-
 ```
-
 
 ### Steg 4
 Vi vil at ``||variables:havvind||`` skal dukke opp ute i havet. Hent en ``||scene:place energy on top of random ||``-blokk fra 
 ``||scene:Scene||``-menyen og plasser den inni ``||loops:repeat||``-blokken. Endre ``||variables:mySprite2||`` til ``||variables:havvind||``.
 Du skal ikke forandre flisen. Havvind-ikonene dukker nå opp ute i havet.
-
 
 ```blocks
 namespace SpriteKind {
@@ -394,7 +385,6 @@ for (let index = 0; index < 200; index++) {
     tiles.placeOnRandomTile(havvind, assets.tile`tile0`)   
 }
 info.startCountdown(30)
-
 ```
 
 ### Steg 5

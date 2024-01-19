@@ -1,7 +1,6 @@
 ### @activities true
 
 ```template
-
 namespace SpriteKind {
     export const Fornybar = SpriteKind.create()
 }
@@ -176,8 +175,8 @@ for (let index = 0; index < 200; index++) {
     tiles.placeOnRandomTile(havvind, assets.tile`transparency16`)
 }
 info.startCountdown(30)
-
 ```
+
 # Lydeffekter - Lag lyd i spillet
 ## Introduksjon
 ### Introduksjon @unplugged
@@ -185,6 +184,7 @@ info.startCountdown(30)
 Et dataspill blir litt flatt og kjedelig uten lydeffekter. La oss legge til noen!
 
 ### Steg 1
+
 Legg til en lyd når spillfiguren plukker opp energi. Hent en ``||music:play sound||``-blokk fra ``||music:Music||``-menyen og plasser den inni ``||sprites:overlap||``-blokken som bestemmer hva som skjer når du fanger et lyn.
 Gjør det samme for havvind.
 ```blocks
@@ -214,6 +214,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Fornybar, function (sprite, othe
 ```
 
 ### Steg 3
+
 Det var det hele! Å legge til lyd er ganske lett, ikke sant?
 Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
 

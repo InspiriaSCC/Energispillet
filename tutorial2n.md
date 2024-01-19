@@ -1,7 +1,6 @@
 ### @activities true
 
 ```template
-
 namespace SpriteKind {
     export const Fornybar = SpriteKind.create()
 }
@@ -176,11 +175,8 @@ for (let index = 0; index < 200; index++) {
     tiles.placeOnRandomTile(havvind, assets.tile`transparency16`)
 }
 info.startCountdown(30)
-
-
-
-
 ```
+
 # Animering - Lag en levende spillfigur
 ## Introduksjon
 ### Introduksjon @unplugged
@@ -255,6 +251,7 @@ game.onUpdateInterval(300, function () {
 
 ### Steg 5
 Hent en ``||animation:animate mySprite||``-blokk fra ``||animation:Animation||``-menyen (under "Advanced") og plasser den i det øverste gapet i ``||Logic.if then else||``-blokken.
+
 ```blocks
 game.onUpdateInterval(300, function () {
     if (controller.left.isPressed()) {
@@ -293,8 +290,10 @@ game.onUpdateInterval(300, function () {
     }
 })
 ```
+
 ### Steg 6
 Endre der det står 500 ms til 100 ms i ``||animation:animate mySprite||``-blokken og pass på at det står ``||animation:loop OFF||`` nederst i blokken.
+
 ```blocks
 game.onUpdateInterval(300, function () {
     if (controller.left.isPressed()) {
@@ -332,8 +331,10 @@ game.onUpdateInterval(300, function () {
         
     }
 ```
+
 ### Steg 7
 Klikk på det grå kvadratet. Velg "gallery" øverst på midten av skjermen og legg merke til at noen av bildene har små filmkameraer. Hold musepekeren over bildene for å se animasjonen. Finn spillfiguren din og klikk på animasjonen der figuren beveger seg mot venstre.
+
 ```blocks
 game.onUpdateInterval(300, function () {
     if (controller.left.isPressed()) {
@@ -405,9 +406,12 @@ game.onUpdateInterval(300, function () {
         
     }
 ```
+
 ### Steg 8
+
 Gjør det samme med de tre andre retningene. Husk å velge riktig animasjon og å sette tiden til 100 ms.
 I det siste gapet i ``||logic:if then else||``-blokken setter du inn en ``||sprites:set mySprite image to||``-blokk og velg bildet der spillfiguren står vendt mot skjermen.
+
 ```blocks
 let mySprite: Sprite = null 
 game.onUpdateInterval(300, function () {
@@ -647,8 +651,11 @@ game.onUpdateInterval(300, function () {
        
     }
 ```
+
 ### Steg 9
+
 I det siste gapet i ``||logic:if then else||``-blokken setter du inn en ``||sprites:set mySprite image to||``-blokk og velg bildet der spillfiguren står vendt mot skjermen.
+
 ```blocks
 let mySprite: Sprite = null 
 game.onUpdateInterval(300, function () {
@@ -905,7 +912,9 @@ game.onUpdateInterval(300, function () {
     `)
     }
 ```
+
 ### Steg 10
+
 Gratulerer! Det var det hele! Nå vet du hvordan du kan få spillfiguren din til å bevege seg på en litt mer levende måte.
 Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
 

@@ -204,13 +204,13 @@ for (let index = 0; index < 100; index++) {
     tiles.placeOnRandomTile(energi, sprites.castle.tilePath5)
 }
 info.startCountdown(30)
-
 ```
 
 ### Steg 2
 
 Der hvor det står ``||logic:true ||`` skal vi plassere ``||math:0% chance ||`` 
 fra ``||math:Math||``-menyen. Skriv 80 der hvor det står 0.
+
 ```block
 for (let index = 0; index < 100; index++) {
     energi = sprites.create(img`
@@ -239,7 +239,6 @@ for (let index = 0; index < 100; index++) {
     }
     tiles.placeOnRandomTile(energi, sprites.castle.tilePath5)
 }
-
  ```
 
 ### Steg 3
@@ -248,7 +247,6 @@ sandfarge. Flytt ``||scene:place energi on top of random ||`` inn i den
 øverste av de ledige plassene i ``|| logic:if then else||``-blokken. 
 
 ```block
-    
     energi = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -274,7 +272,6 @@ sandfarge. Flytt ``||scene:place energi on top of random ||`` inn i den
         
     }
 }
-
 ```
 
 ### Steg 4
@@ -326,7 +323,6 @@ Der det står ``||logic:true||`` skal vi ha en
 
 
 ```block
-
 let mySprite = sprites.create(img`
     . f f f . f f f f . f f f . 
     f f f f f c c c c f f f f f 
@@ -476,6 +472,8 @@ let mySprite = sprites.create(img`
     . . . . f f f f f f . . . . 
     . . . . f f . . f f . . . . 
     `, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
 if (Math.percentChance(20)) {
     tiles.placeOnRandomTile(mySprite, sprites.castle.tilePath5)
 } else {
@@ -507,8 +505,6 @@ for (let index = 0; index < 100; index++) {
     }
 }
 info.startCountdown(30)
-controller.moveSprite(mySprite)
-scene.cameraFollowSprite(mySprite)
 ```
 
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>

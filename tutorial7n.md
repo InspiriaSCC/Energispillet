@@ -2,11 +2,9 @@
 
 
 ```template
-
 namespace SpriteKind {
     export const Fornybar = SpriteKind.create()
 }
-
 namespace myTiles {
     //% blockIdentity=images._tile
     export const tile0 = img`
@@ -28,7 +26,6 @@ namespace myTiles {
         . . . . . . . . . . . . . . . .
     `
 }
-
 info.onCountdownEnd(function () {
     if (info.score() < 20) {
         game.over(false)
@@ -103,7 +100,6 @@ tiles.setTilemap(tiles.createTilemap(
             [myTiles.tile0,sprites.castle.tilePath5,sprites.castle.tileGrass1],
             TileScale.Sixteen
         ))
-
 scene.setBackgroundColor(9)
 let mySprite = sprites.create(img`
     . f f f . f f f f . f f f . 
@@ -177,8 +173,8 @@ for (let index = 0; index < 200; index++) {
     tiles.placeOnRandomTile(havvind, assets.tile`transparency16`)
 }
 info.startCountdown(30)
-
 ```
+
 # Rivaler - Legg til fiender i spillet ditt
 ## Introduksjon
 ### Introduksjon @unplugged
@@ -186,6 +182,7 @@ info.startCountdown(30)
 Noen ganger er det fint å kunne uskadeligjøre rivaler. Her får du et eksempel på hvordan spillefiguren din kan skyte prosjektiler! 
 
 ### Steg 1
+
 Begynn med å hente en ``||controller:on A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den for seg selv på arbeidsflaten.
 
 ```blocks
@@ -195,6 +192,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ### Steg 2
+
 Hent en ``||logic:if true then else||``-blokk fra ``||logic:Logic||``-menyen og legg den inni ``||controller:on A button pressed||``-blokken.
 
 ```blocks
@@ -207,7 +205,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 ```
+
 ### Steg 3
+
 Hent en ``||controller:is A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den der det står ``||logic:true||`` i ``||logic:if true then else||``-blokken.
 Endre ``||controller:is A button pressed||`` til ``||controller:is left button pressed||`` ved å klikke der det står ``||controller:A||`` på ``||controller:is A button pressed||``-blokken.
 
@@ -223,6 +223,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ### Steg 4
+
 Hent en ``||sprites:set projectile to projectile from mySprite with vx 50 vy 50||`` fra ``||sprites:Sprites||``-menyen og legg den inn i det første gapet på ``||logic:if true then else||``-blokken.
 Endre vx til -200 og vy til 0. Du må skrive inn tallet -200. Slideren på blokken går bare til 100, som er like fort som spillfiguren din beveger seg.
 Vx er farten i x-retningen. Når den er negativ går prosjektilet mot venstre. Vy er farten i y-retningen.
@@ -256,6 +257,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ### Steg 5
+
 Klikk på det grå kvadratet på ``||sprites:set projectile to projectile from mySprite with vx -200 vy 0||``-blokken og tegne eller velg et prosjektil fra galleriet.
 I eksempleter prosjektilet en donut.
 
@@ -288,6 +290,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ### Steg 6
+
 Klikk på det lille plusstegnet nede til høyre på ``||logic:if true then else||``-blokken to ganger, så du får tre ledige gap.
 
 ```blocks
@@ -323,6 +326,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ### Steg 7
+
 Hent en ``||controller:is A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den mellom første og andre gap der det står ``||logic:true||`` i ``||logic:if true then else||``-blokken.
 Endre ``||controller:is A button pressed||`` til ``||controller:is right button pressed||`` ved å klikke der det står ``||controller:A||`` på ``||controller:is A button pressed||``-blokken.
 
@@ -359,6 +363,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ### Steg 8
+
 Kopier blokken ``||sprites:set projectile to projectile from mySprite with vx -200 vy 0||`` inn i det nest øverste gapet i ``||logic:if true then else||``-blokken. Endre den så det står ``||sprites:set projectile to projectile from mySprite with vx 200 vy 0||``.
 
 ```blocks
@@ -410,6 +415,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ### Steg 9
+
 Hent eller kopier en ny ``||controller:is A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den mellom andre og tredje gap der det står ``||logic:true||`` i ``||logic:if true then else||``-blokken.
 Endre ``||controller:is A button pressed||`` til ``||controller:is down button pressed||`` ved å klikke der det står ``||controller:A||`` på ``||controller:is A button pressed||``-blokken.
 
@@ -463,6 +469,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ### Steg 10
+
 Kopier blokken ``||sprites:set projectile to projectile from mySprite with vx 200 vy 0||`` inn i det nest nederste gapet i ``||logic:if true then else||``-blokken. Endre den så det står ``||sprites:set projectile to projectile from mySprite with vx 0 vy 200||``.
 Positiv y-retning er nedover på skjermen, derfor skytes prosjektilet nedover når farten i y-retning er positiv.
 
@@ -532,6 +539,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ### Steg 11
+
 Kopier blokken ``||sprites:set projectile to projectile from mySprite with vx 0 vy 200||`` fra nest nederste gap i ``||logic:if true then else||``-blokken og legg kopien i det nederste gapet.
 Endre blokken så det står ``||sprites:set projectile to projectile from mySprite with vx 0 vy -200||``.
 Når du ikke trykker på noen retning, eller trykker oppover, skyter spillfiguren din et prosjektil som går oppover på skjermen.
@@ -618,6 +626,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 ### Steg 12
+
 Nå trenger du en ``||sprites:on sprite of kind player overlaps othersprite of kind player||``-blokk. 
 Hent en fra ``||sprites:Sprites||``-menyen og legg den ut på bordet. Endre det første feltet der det står ``||sprites:Player||`` til ``||sprites:projectile||`` og det andre feltet til ``||sprites:Enemy||``.
 
@@ -628,6 +637,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 ```
 
 ### Steg 13
+
 Når du treffer en fiende med et prosjektil, skal du få tilbake litt av energien fienden har tatt.
 Hent en ``||info:change score by 1||``-blokk fra ``||info:Info||``-menyen og legg den inn i ``||sprites:on sprite of Kind projectile overlaps othersprite of kind Enemy||``.
 
@@ -638,4 +648,5 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 ```
 
 ### Steg 14
+
 Det var alt! Nå vet du hvordan du lager rivaler i spillet ditt. Om du vil, kan du gå inn på [Kodekraft.no](https://kodekraft.no) og sjekke ut neste oppgave.

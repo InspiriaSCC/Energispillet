@@ -302,7 +302,6 @@ let energi = sprites.create(img`
 
  ```
 
-
 ### Steg 3
 Energi-spriten (lynet) skal også plasseres på et tilfeldig sted. Finn en ``||scene:place mySprite on top of random...||``-blokk og legg under ``||variables:set energi to...||``. Her må du forandre mySprite til energi og velg den sandfargede/grå flisen. 
 
@@ -495,7 +494,6 @@ for (let index = 0; index < 100; index++) {
 }
 // @highlight
 info.startCountdown(30)
-
 ```
 ### Steg 9
 Ferdig! Spill spillet og se hvor mange poeng du får.
