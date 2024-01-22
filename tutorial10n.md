@@ -269,6 +269,7 @@ tiles.setCurrentTilemap(tilemap`level1`)
 Klikk på det grå kvadratet og velg verktøyet for å tegne vegger.
 Verktøyet ligger nederst i verktøymenyen på venstre side i editoren, rett over ordet "Gallery".
 Tegn mellom 5 og 10 korte streker som skal forestille plattformer rundt omkring på spillbrettet.
+
 ![VeggVerktøy](https://raw.githubusercontent.com/InspiriaSCC/Energispillet/master/assets/WallTool.jpg)
 ![Plattformer](https://raw.githubusercontent.com/InspiriaSCC/Energispillet/master/assets/Platformssmall.jpg)
 
@@ -277,3 +278,5 @@ Strekene du tegnet kommer til å være usynlige i det ferdige spillet.
 For å gjøre dem synlige må du tegne over dem med fliser.
 Klikk på det grå kvadratet i ``||scene:set tilemap to tilemap||`` blokken, og bruk fliseverktøyet til tegne over strekene.
 Klikk på "Done" nede i høyre hjørne når du er fornøyd.
+
+![Plattformer](https://raw.githubusercontent.com/InspiriaSCC/Energispillet/master/assets/PlatformTiles.jpg)
