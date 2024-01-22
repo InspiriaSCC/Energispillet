@@ -1296,6 +1296,8 @@ mySprite.x += 0
 I blokken ``||sprites:change mySprite x by 0||`` må du nå endre "x" til "ay (acceleration y) og "0" til "100".
 Det kan hende du må prøve deg fram med forskjellige verdier der du skrev 100 for å få til en naturlig fallbevegelse, men 100 er i hvert fall i nærheten.
 
+![Gravitasjon](https://raw.githubusercontent.com/InspiriaSCC/Energispillet/master/assets/SetJumpVelocity.jpg)
+
 ```blocks
 scene.setBackgroundImage(img`
     3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
