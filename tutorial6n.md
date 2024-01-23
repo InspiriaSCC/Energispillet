@@ -187,23 +187,25 @@ Nå skal vi lage en usynlig grense som bare kan krysses ved en kontrollpost. Da 
 
 Først må vi sette opp en kontrollpost på grensen. Kontrollposten må være en egen flis (tile). Klikk på kartikonet i ``||scene:set tilemap to||``, finn en flis du synes passer som kontrollpost og plasser den der de to øyene møtes.
 
-![Grensevakt](https://raw.githubusercontent.com/Yngel72/energispillet/master/assets/grensevakt1.jpg)
+![Grensevakt](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/grensevakt1.jpg)
 
 ### Steg 2
 
-Klikk på kartikonet i ``||scene:set tilemap to||``-blokken på nytt. Klikk på vegg-ikonet under det lille bildet av kartet på venstre side av skjermen. "Draw walls" kommer opp under ikonet når du peker på det.
+Klikk på kartikonet i ``||scene:set tilemap to||``-blokken på nytt.
+Klikk på vegg-ikonet under det lille bildet av kartet på venstre side av skjermen.
+"Draw walls" kommer opp under musepekeren når du peker på det.
+Tegn en vegg som deler kartet i to mellom de to øyene.
+Pass på at grensen går helt ut i kanten av bildet og at det ikke er hull i veggen andre steder enn ved kontrollposten.
 
-![Veggverktøy](https://raw.githubusercontent.com/Yngel72/energispillet/master/assets/Walltool.jpg)
+![Grensemur](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/Grensevegg4.gif)
 
 ### Steg 3
 
-Tegn en vegg som deler kartet i to mellom de to øyene. Pass på at grensen går helt ut i kanten av bildet og at det ikke er hull i veggen andre steder enn ved kontrollposten.
-
-![Grensemur](https://raw.githubusercontent.com/Yngel72/energispillet/master/assets/Grensevegg4.gif)
-
-### Steg 4
-
-Legg til en grensevakt på kontrollposten. Hent en ``||sprites:set mySprite to sprite of kind||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den i hovedkoden din. Klikk på det grå feltet og velg et bilde. Klikk på feltet ``||variables:mySprite||`` og velg ``||variables:New variable||``. Kall den nye variabelen for ``||variables:grensevakt||``. Endre typen (Kind) til en ny type sprite. Kall den ``||sprites:Vakt||`` eller noe annet som gir mening.
+Legg til en grensevakt på kontrollposten.
+Hent en ``||sprites:set mySprite to sprite of kind||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den nederst i ``||loops:on start||``.
+Klikk på det grå kvadratet og velg et bilde.
+Klikk på feltet ``||variables:mySprite||`` og velg ``||variables:New variable||``. Kall den nye variabelen for ``||variables:grensevakt||``.
+Endre typen (Kind) til en ny type sprite. Kall den ``||sprites:Vakt||`` eller noe annet som gir mening.
 
 ```block
 namespace SpriteKind {
@@ -230,56 +232,50 @@ let grensevakt = sprites.create(img`
 
 ```
 
+### Steg 4
+
+Plasser grensevakten ved å legge til en ``||scene:place mySprite on top of random tile||``-blokk fra ``||scene:Scene||``-menyen under den nye sprite-blokken din.
+Endre ``||variables:mySprite||`` til ``||variables:grensevakt||`` og velg flisen med bilde av kontrollposten.
+
+![Plasser grensevakt](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/plasservakt.png)
+
 ### Steg 5
 
-Plasser grensevakten ved å legge til en ``||scene:place mySprite on top of random tile||``-blokk fra ``||scene:Scene||``-menyen under den nye sprite-blokken din og velg ``||variables:grensevakt||`` i stedet for ``||variables:mySprite||`` og velg kontrollpostflisen som det den skal plasseres på.
-
-![Plasser grensevakt](https://raw.githubusercontent.com/Yngel72/energispillet/master/assets/plasservakt.png)
-
-```block
-namespace SpriteKind {
-    export const Vakt = SpriteKind.create()
-}
-
-let vakt = sprites.create(img`
-    . . . . . . f f f f . . . . . . 
-    . . . . f f f 2 2 f f f . . . . 
-    . . . f f f 2 2 2 2 f f f . . . 
-    . . f f f e e e e e e f f f . . 
-    . . f f e 2 2 2 2 2 2 e e f . . 
-    . . f e 2 f f f f f f 2 e f . . 
-    . . f f f f e e e e f f f f . . 
-    . f f e f b f 4 4 f b f e f f . 
-    . f e e 4 1 f d d f 1 4 e e f . 
-    . . f e e d d d d d d e e f . . 
-    . . . f e e 4 4 4 4 e e f . . . 
-    . . e 4 f 2 2 2 2 2 2 f 4 e . . 
-    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
-    . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
-    . . . . . f f f f f f . . . . . 
-    . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Vakt)
-// @highlight
-tiles.placeOnRandomTile(grensevakt, sprites.builtin.forestTiles0)
-```
-
-### Steg 6
-
- Hva skal skje når spilleren treffer grensevakten?
-Plasser vakten på feltet mellom de to områdene og hent inn en ``||sprites:overlap||``-blokk, slik at du kan kontrollere hva som skal skje hvis spilleren overlapper med vakten.
-Kanskje vakten slenger spilleren tilbake til et tilfeldig felt inne på området sitt? Kanskje spilleren kan komme forbi hvis den har klart å samle nok energi først? Går det an å bestikke vakten med litt energi, kanskje? Eller kan spilleren klare å snike seg forbi på et vis?
-Eller er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
+Nå skal du bestemme hva som skjer når spillfiguren treffer grensevakten.
+Hent en ``||sprites:overlap||``-blokk.
+Spillfiguren kan komme forbi hvis den har klart å samle nok energi, hvis ikke blir den slengt tilbake til et tilfeldig sted.
+Klarer du å få til koden selv? Trykk på lyspæra for å se en mulig løsning.
+Det var alt! Godt jobba!
+Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
 
 ```blocks
 namespace SpriteKind {
     export const Vakt = SpriteKind.create()
 }
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Vakt, function (sprite, otherSprite) {
-    // @highlight
-    if (true) {
-    	
-    } else {
-    	
+    if (info.score() < 10) {
+        tiles.placeOnRandomTile(mySprite, sprites.castle.tileGrass1)
     }
 })
 ```
