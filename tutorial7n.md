@@ -365,7 +365,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ### Steg 8
 
 Kopier blokken ``||sprites:set projectile to projectile from mySprite with vx -200 vy 0||`` inn i det nest øverste gapet i ``||logic:if true then else||``-blokken.
-Endre den så det står ``||sprites:set projectile to projectile from mySprite with vx 200 vy 0||``.
+Endre den så det står ``||sprites:vx 200 vy 0||``.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -418,7 +418,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ### Steg 9
 
 Hent eller kopier en ny ``||controller:is A button pressed||``-blokk og plasser den i sekskanten mellom andre og tredje gap.
-Endre ``||controller:is A button pressed||`` til ``||controller:is down button pressed||`` ved å klikke der det står ``||controller:A||`` på ``||controller:is A button pressed||``-blokken.
+Endre ``||controller:A||`` til ``||controller:down||``.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -472,7 +472,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ### Steg 10
 
 Kopier blokken ``||sprites:set projectile to projectile from mySprite with vx 200 vy 0||`` inn i det nest nederste gapet i ``||logic:if true then else||``-blokken.
-Endre den så det står ``||sprites:set projectile to projectile from mySprite with vx 0 vy 200||``.
+Endre den så det står ``||sprites:vx 0 vy 200||``.
 Positiv y-retning er nedover på skjermen, derfor skytes prosjektilet nedover når farten i y-retning er positiv.
 
 ```blocks
@@ -543,7 +543,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ### Steg 11
 
 Kopier blokken ``||sprites:set projectile to projectile from mySprite with vx 0 vy 200||`` og legg kopien i det siste ledige gapet.
-Endre blokken så det står ``||sprites:set projectile to projectile from mySprite with vx 0 vy -200||``.
+Endre blokken så det står ``||sprites:vx 0 vy -200||``.
 Når du ikke trykker på noen retning, eller trykker oppover, skyter spillfiguren din et prosjektil som går oppover på skjermen.
 
 ```blocks
@@ -641,7 +641,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, othe
 
 ### Steg 13
 
-Når du treffer en energisprite med et prosjektil, skal du nå få poeng og energien forsvinne.
+Når du treffer en energisprite med et prosjektil, skal du nå få poeng og energien skal forsvinne.
 Hent en ``||info:change score by 1||``-blokk fra ``||info:Info||``-menyen og legg den inn i overlap-blokken.
 
 ```blocks
@@ -651,10 +651,10 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, othe
 ```
 
 ### Steg 14
-Hent en ``||sprites:destroy mySprite||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den under ``||info:change score by 1||``-blokken.
-Dra ovalen ``||sprites:otherSprite||`` inn der det står ``||sprites:mySprite||``.
-Nå forsvinner energien når du skyter den, og du får poeng.
-Det var alt! Nå vet du hvordan du lager prosjektiler. Gå gjerne inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
+<p>Hent en ``||sprites:destroy mySprite||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den under ``||info:change score by 1||``-blokken.
+Dra variablen ``||variables:otherSprite||`` inn der det står ``||variables:mySprite||``.<br>
+Nå forsvinner energien når du skyter den, og du får poeng.<br>
+Det var alt! Nå vet du hvordan du lager prosjektiler. Gå gjerne inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.</b>
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
