@@ -238,49 +238,19 @@ let grensevakt = sprites.create(img`
 Plasser grensevakten ved å legge til en ``||scene:place mySprite on top of random||``-blokk fra ``||scene:Scene||``-menyen under den nye sprite-blokken din.
 Endre ``||variables:mySprite||`` til ``||variables:grensevakt||`` og velg flisen med bilde av kontrollposten.
 
-![Plasser grensevakt](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/plasservakt.png)
+![Plasser grensevakt](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/PlasserVakt.jpg)
 
 ### Steg 6
 
 Nå skal du bestemme hva som skjer når spillfiguren treffer grensevakten.
 Hent en ``||sprites:overlap||``-blokk.
 Spillfiguren skal komme forbi hvis den har klart å samle nok energi.
-Hvis ikke blir den slengt tilbake til et tilfeldig sted.
+Hvis ikke blir den slengt tilbake til et tilfeldig sted, kanskje helst der det er lite energi.
 Klarer du å få til koden selv? Trykk på lyspæra for å se en mulig løsning.
 Det var alt! Godt jobba!
 Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
 
-```blocks
-namespace SpriteKind {
-    export const Vakt = SpriteKind.create()
-}
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-}
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Vakt, function (sprite, otherSprite) {
-    if (info.score() < 10) {
-        tiles.placeOnRandomTile(mySprite, sprites.castle.tileGrass1)
-    }
-})
-```
+![Vakt kaster ut spiller](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/VaktKasterUt.jpg)
 
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
 
