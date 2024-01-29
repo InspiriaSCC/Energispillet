@@ -180,12 +180,13 @@ info.startCountdown(30)
 
 # Rivaler - Legg til fiender i spillet ditt
 ## Introduksjon
-### Introduksjon @unplugged
+### Steg 1: Introduksjon @unplugged
 
-Nå skal vi gjøre spillet litt mer utfordrende. La oss legge til en rival! 
+Nå skal vi gjøre spillet litt mer utfordrende. La oss legge til en fiende! 
 
-### Steg 1
-Begynn med å hente en ``||sprite:set mySprite2 to sprite of kind||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den nederst i ``||loops:on start||``. Klikk på det grå kvadratet og velg en spillfigur fra galleriet.
+### Steg 2
+Begynn med å hente en ``||sprite:set mySprite2 to sprite of kind||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den nederst i ``||loops:on start||``.
+Klikk på det grå kvadratet og velg en spillfigur fra galleriet.
 
 ```block
 let mySprite2 = sprites.create(img`
@@ -208,7 +209,7 @@ let mySprite2 = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-### Steg 2
+### Steg 3
 
 Siden den nye figuren din er en fiende, må du endre typen, altså ``||sprites:Kind||`` fra ``||sprites:Player||`` til ``||sprites:Enemy||``.
 
@@ -234,7 +235,7 @@ let mySprite2 = sprites.create(img`
     `, SpriteKind.Enemy)
 ```
 
-### Steg 3
+### Steg 4
 
 Plasser den nye fienden på et tilfeldig sted ved å hente en ``||scene:place mysprite on top of random||``-blokk fra ``||scene:Scene||``-menyen og plasser den under den nye ``||variables:mySprite2||``-blokken. Endre ``||variables:mySprite||`` til ``||variables:mySprite2||``. Klikk på det grå kvadratet for å velge hvilken type flis (tile) fienden skal oppstå på.
 
@@ -261,7 +262,7 @@ let mySprite2 = sprites.create(img`
 tiles.placeOnRandomTile(mySprite2, sprites.castle.tilePath5)
 ```
 
-### Steg 4
+### Steg 5
 
 Nå skal vi få fienden til å bevege seg av seg selv. Det gjør vi ved å gi den nye spriten fart i en bestemt xy-retning. Hent en ``||sprites:set mysprite velocity to vx vy||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den under ``||scene:place mysprite on top of random||``. Endre ``||variables:mySprite||`` til ``||variables:mySprite2||``. Du kan endre farten til fienden ved å endre på de to tallene bak vx og vy.
 
@@ -289,7 +290,7 @@ tiles.placeOnRandomTile(mySprite2, sprites.castle.tilePath5)
 mySprite2.setVelocity(50, 50)
 ```
 
-### Steg 5
+### Steg 6
 
 For at ikke fienden bare skal forsvinne ut av spillbrettet skal vi få den til å sprette når den treffer kanten. Hent en ``||sprites:set mySprite bounce on wall||``-blokk fra ``||sprites:Sprites||``-menyen og endre ``||variables:mySprite||`` til ``||variables:mySprite2||``.
 Om du vil ha flere fiender samtidig, legger du disse blokkene i en løkke.
@@ -319,7 +320,7 @@ mySprite2.setVelocity(50, 50)
 mySprite2.setBounceOnWall(true)
 ```
 
-### Steg 6
+### Steg 7
 
 Nå må du bestemme hva som skal skje når fienden finner energi på land.
 Da trenger du en ``||sprites:overlap||``-blokk fra ``||sprites:Sprites||``-menyen.
@@ -330,8 +331,8 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Food, function (sprite, otherSpri
     
 })
 ```
-### Steg 7
-Når rivalen din tar energi, forsvinner energien og du mister poeng.
+### Steg 8
+Når fienden din tar energi, forsvinner energien og du mister poeng.
 Legg inn en ``||sprites:destroy mySprite||`` og en ``||info:change score by||`` i overlap-blokken.
 Endre ``||sprites:destroy mySprite||`` til ``||sprites:destroy otherSprite||`` og ``||info:change score by 1||`` til ``||info:change score by -1||``.
 
@@ -344,7 +345,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Food, function (sprite, otherSpri
 })
 ```
 
-### Steg 8
+### Steg 9
 
 Du kan gjøre det samme for havvind om du vil at fienden skal ta energi i havet også.
 
@@ -357,7 +358,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Fornybar, function (sprite, other
 })
 ```
 
-### Steg 9
+### Steg 10
 
 Om du vil gjøre det enda mer interessant, kan du jo la fienden ta liv fra deg også.
 I så fall må du utforske hvordan du kan bruke ``||info:set life to||``-blokken i hovedkoden din og ``||info:change life by -1||``-blokker inni en ``||sprites:overlap||``-blokk.

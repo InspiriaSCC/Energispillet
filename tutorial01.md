@@ -123,12 +123,12 @@ energi = sprites.create(img`
 ```
 # Kodekraft: lag et energispill
 ## Introduksjon
-### Introduksjon @unplugged
+### Steg 1: Introduksjon @unplugged
 
 Lag ditt eget spill der du samler energi og teller poeng. Hvor mange poeng får du før tiden er ute?
 
 
-### Steg 1
+### Steg 2
 Det ligger litt ferdig kode som vi skal ta utgangspunkt i. Se på koden og test spillet. 
 ```blocks
 namespace myTiles {
@@ -253,7 +253,7 @@ energi = sprites.create(img`
 ```
 ## Plassering av sprites
 
-### Steg 2
+### Steg 3
 Få spillfiguren til å bli plassert på et tilfeldig sted på skjermen. Fra ``||scene:Scene||``-menyen finner du en ``||scene:place mySprite on top of random...||``-blokk. Legg denne i ``||loops:on start||``, under ``||variables:set mySprite to...||`` og velg den sandfargede/grå flisen (tile). 
 
 ```blocks
@@ -302,7 +302,7 @@ let energi = sprites.create(img`
 
  ```
 
-### Steg 3
+### Steg 4
 Energi-spriten (lynet) skal også plasseres på et tilfeldig sted. Finn en ``||scene:place mySprite on top of random...||``-blokk og legg under ``||variables:set energi to...||``. Her må du forandre mySprite til energi og velg den sandfargede/grå flisen. 
 
 ```blocks
@@ -352,7 +352,7 @@ tiles.placeOnRandomTile(energi, sprites.castle.tilePath5)
 
 ```
 
-### Steg 4
+### Steg 5
 Vi trenger flere energi-sprites. Bruk en ``||loops:repeat||``-løkke fra ``||loops:loops||``-menyen for å gjenta de to nederste blokkene i ``||loops:on start||`` for eksempel 100 ganger.
 Tips: Hold inne Ctrl-knappen for å flytte en og en blokk.
 
@@ -408,7 +408,7 @@ for (let index = 0; index < 100; index++) {
 
 ## Fang energien
 
-### Steg 5
+### Steg 6
 
 Når spilleren vår treffer et lyn, vil vi at dette skal forsvinne. I ``||sprites:Sprites||``-menyen finner du en ``||sprites:on sprite of kind Player overlaps...||``. Legg denne hvor som helst på skjermen. Forandre det slik at ``||variables:otherSprite||`` er av typen ``||sprites:Food||``.
 
@@ -417,7 +417,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-### Steg 6
+### Steg 7
 Inni blokken du nettopp lagde, plasserer du først en ``||Sprites:destroy mySprite||``-blokk. 
 Klikk på variabelen ``||variables:otherSprite||`` og dra den inn der det står  ``||variables:mySprite||``.
 
@@ -428,7 +428,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-### Steg 7
+### Steg 8
 
 Vi må også telle poeng. I ``||info:Info||``-menyen finner du ``||info:change score by..||``. Legg denne i ``||sprites:overlap||``-blokka. Test spillet og se at du får poeng når du fanger energi.
 
@@ -442,7 +442,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## Nedtelling
 
-### Steg 8
+### Steg 9
 
 Til slutt tar vi med en nedtelling. Nederst i ``||loops:on start||`` legger du en ``||info:start countdown||``-blokk. Forandre tiden til 30 sekunder.
 
@@ -495,7 +495,7 @@ for (let index = 0; index < 100; index++) {
 // @highlight
 info.startCountdown(30)
 ```
-### Steg 9
+### Steg 10
 Ferdig! Spill spillet og se hvor mange poeng du får.
 Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave. 
 

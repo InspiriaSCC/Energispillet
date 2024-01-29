@@ -176,10 +176,10 @@ info.startCountdown(30)
 
 # Miljøpåvirkning - Redd planeten!
 ## Introduksjon
-### Introduksjon @unplugged
+### Steg 1: Introduksjon @unplugged
 Hvordan påvirker forskjellige energikilder miljøet? Her er et forslag til hvordan man kan få spillet til å handle om å redde planeten.
 
-### Steg 1
+### Steg 2
 
 La oss først legge til en fossil energikilde, for eksempel kull. Hent en ``||loops:repeat 4 times||``-blokk fra ``||loops:Loops||``-menyen og plasser den i hovedkoden din, under de andre ``||loops:repeat||``-blokkene. Skriv 100 der det står 4.
 
@@ -188,7 +188,7 @@ for (let index = 0; index < 100; index++) {
 	
 }
 ```
-### Steg 2
+### Steg 3
 
 Hent en ``||variables:set mySprite2 to||`` blokk fra ``||sprites:Sprites||``-menyen. Lag en ny variabel som heter ``||variables:kull||`` ved å trykke der det står ``||variables:mySprite2||`` og lag en ny variabeltype (Kind) som heter ``||sprites:Fossil||`` der det står ``||sprites:Player||``. Klikk på det grå kvadratet og tegn en kullbit.
 
@@ -220,7 +220,7 @@ for (let index = 0; index < 100; index++) {
 }
 ```
 
-### Steg 3
+### Steg 4
 
 Hent en ``||logic:if then else||``-blokk fra ``||logic:Logic||``-menyen og plasser den inni ``||loops:repeat||``-blokken du nettopp hentet.
 
@@ -257,7 +257,7 @@ for (let index = 0; index < 100; index++) {
 }
 ```
 
-### Steg 4
+### Steg 5
 
 Hent en liten ``||math:0 % chance||``-blokk fra ``||math:Math||``-menyen og plasser den der det står ``||logic:true||`` i den siste blokken du hentet. Skriv inn 80 der det står 0.
 
@@ -294,7 +294,7 @@ for (let index = 0; index < 100; index++) {
 }
 ```
 
-### Steg 5
+### Steg 6
 
 Hent en ``||scene:place mySprite on random||``-blokk fra ``||scene:Scene||``-menyen. Endre ``||variables:mySprite2||`` til ``||variables:kull||``, klikk på det grå kvadratet og velg grønn flis (tile).
 
@@ -331,7 +331,7 @@ for (let index = 0; index < 100; index++) {
 }
 ```
 
-### Steg 6
+### Steg 7
 
 Hent en ny ``||scene:place mySprite on random||``-blokk fra ``||scene:Scene||``-menyen. Endre ``||variables:mySprite2||`` til ``||variables:kull||``, klikk på det grå kvadratet og velg sandfarget flis (tile). Nå har du fordelt kullressurser på begge øyene. Om du vil kan du legge til andre fossile energikilder med samme fremgangsmåte.
 
@@ -368,7 +368,7 @@ for (let index = 0; index < 100; index++) {
 }
 ```
 
-### Steg 7
+### Steg 8
 
 Vi lar planeten selv være spiller nummer 2, slik at vi kan la innsamling av noen typer energi føre til at planeten mister liv. Hent en ``||info:set player2 life to 3||``-blokk fra ``||info:Info||``-menyen og plasser den under resten av koden din inni hoved-``||loops:on start||``-løkken, under resten av koden din. Du kan gi planeten mer liv om du synes 3 er litt lite.
 
@@ -376,7 +376,7 @@ Vi lar planeten selv være spiller nummer 2, slik at vi kan la innsamling av noe
 info.player2.setLife(3)
 ```
 
-### Steg 8
+### Steg 9
 
 Hent en ``||info:change player2 life by -1||``-blokk fra ``||info:Info||``-menyen og plasser den inni ``||sprites:overlap||``-blokken som styrer hva som skjer når spilleren plukker opp kull. Kull representerer fossile drivstoff som påvirker miljøet negativt.
 
@@ -391,11 +391,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Fossil, function (sprite, otherS
     info.player2.changeLifeBy(-1)
 ```
 
-### Steg 9
+### Steg 10
 
 Om du har laget ditt eget spill kan du gjenta Steg 8 for alle ``||sprites:overlap||``-blokker som representerer fossile energikilder. Fornybare energikilder kan stå som de er, ettersom de ikke påvirker miljøet i like stor grad.
 
-### Steg 10
+### Steg 11
 
 Hva skjer når planeten går tom for liv? Det sier seg kanskje selv, men du må bruke en ``||info:on player 2 life zero||``-blokk fra ``||info:Info||``-menyen for at noe skal skje.
 Du kan for eksempel sette inn lyd fra ``||music:Music||``-menyen, animere skjermen med blokker fra ``||scene:Scene||``-menyen, eller kanskje bare sette inn en ``||game:game over||``-blokk fra ``||game:Game||``-menyen? (Advarsel: ``||game:game over||``-blokken gjør at du mister effekten av alle andre blokker inni ``||info:on life zero||``-blokken.)
@@ -412,7 +412,7 @@ effects.confetti.startScreenEffect()
 game.over(false)
 ```
 
-### Steg 11
+### Steg 12
 
 Det var alt om miljøpåvirkning.
 Her er en ekstra liten utfordring:

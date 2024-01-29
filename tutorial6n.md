@@ -179,17 +179,18 @@ info.startCountdown(30)
 
 # Grensekontroll - lag en usynlig grense og sett opp en grensevakt!
 ## Introduksjon
-### Introduksjon @unplugged
+### Steg 1: Introduksjon @unplugged
 
-Nå skal vi lage en usynlig grense som bare kan krysses ved en kontrollpost. Da blir det vanskeligere for rivaler å stjele ressurser fra ditt område, men kanskje det gjør spillet vanskeligere for deg også?
+Nå skal vi lage en usynlig grense som bare kan krysses ved en kontrollpost.
+Da blir det vanskeligere for fiender å stjele energi fra ditt område, men kanskje det gjør spillet vanskeligere for deg også?
 
-### Steg 1
+### Steg 2
 
 Først må vi sette opp en kontrollpost på grensen. Kontrollposten må være en egen flis (tile). Klikk på kartikonet i ``||scene:set tilemap to||``, finn en flis du synes passer som kontrollpost og plasser den der de to øyene møtes.
 
 ![Grensevakt](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/grensevakt1.jpg)
 
-### Steg 2
+### Steg 3
 
 Klikk på kartikonet i ``||scene:set tilemap to||``-blokken på nytt.
 Klikk på vegg-ikonet under det lille bildet av kartet på venstre side av skjermen.
@@ -199,11 +200,11 @@ Pass på at grensen går helt ut i kanten av bildet og at det ikke er hull i veg
 
 ![Grensemur](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/Grensevegg4.gif)
 
-### Steg 3
+### Steg 4
 
 Legg til en grensevakt på kontrollposten.
 Hent en ``||sprites:set mySprite to sprite of kind||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den nederst i ``||loops:on start||``.
-Klikk på det grå kvadratet og velg et bilde.
+Klikk på det grå kvadratet og velg et bilde som skal være grensevakt.
 Klikk på feltet ``||variables:mySprite||`` og velg ``||variables:New variable||``. Kall den nye variabelen for ``||variables:grensevakt||``.
 Endre typen (Kind) til en ny type sprite. Kall den ``||sprites:Vakt||`` eller noe annet som gir mening.
 
@@ -232,18 +233,19 @@ let grensevakt = sprites.create(img`
 
 ```
 
-### Steg 4
+### Steg 5
 
-Plasser grensevakten ved å legge til en ``||scene:place mySprite on top of random tile||``-blokk fra ``||scene:Scene||``-menyen under den nye sprite-blokken din.
+Plasser grensevakten ved å legge til en ``||scene:place mySprite on top of random||``-blokk fra ``||scene:Scene||``-menyen under den nye sprite-blokken din.
 Endre ``||variables:mySprite||`` til ``||variables:grensevakt||`` og velg flisen med bilde av kontrollposten.
 
 ![Plasser grensevakt](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/plasservakt.png)
 
-### Steg 5
+### Steg 6
 
 Nå skal du bestemme hva som skjer når spillfiguren treffer grensevakten.
 Hent en ``||sprites:overlap||``-blokk.
-Spillfiguren kan komme forbi hvis den har klart å samle nok energi, hvis ikke blir den slengt tilbake til et tilfeldig sted.
+Spillfiguren skal komme forbi hvis den har klart å samle nok energi.
+Hvis ikke blir den slengt tilbake til et tilfeldig sted.
 Klarer du å få til koden selv? Trykk på lyspæra for å se en mulig løsning.
 Det var alt! Godt jobba!
 Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.

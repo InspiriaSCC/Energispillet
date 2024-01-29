@@ -134,13 +134,13 @@ info.startCountdown(30)
 ```
 # Kodekraft: lag et energispill
 ## Introduksjon
-### Introduksjon @unplugged
+### Steg 1: Introduksjon @unplugged
 
 Vi starter med første versjon av spillet, bortsett fra en viktig ting: 
 Nå skal energien fordeles urettferdig på to land, slik som i den virkelige 
 verden. Det ene landet skal få mye energi, mens det andre landet skal få lite energi.
 
-### Steg 1
+### Steg 2
 Vi begynner med å plassere energien slik at det er størst sannsynlighet 
 for at den havner i det sandfargede landet. 
 I  ``||loops:repeat||``-løkken legger vi inn en 
@@ -206,7 +206,7 @@ for (let index = 0; index < 100; index++) {
 info.startCountdown(30)
 ```
 
-### Steg 2
+### Steg 3
 
 Der hvor det står ``||logic:true ||`` skal vi plassere ``||math:0% chance ||`` 
 fra ``||math:Math||``-menyen. Skriv 80 der hvor det står 0.
@@ -241,7 +241,7 @@ for (let index = 0; index < 100; index++) {
 }
  ```
 
-### Steg 3
+### Steg 4
 Nå skal det være 80 % sannsynlighet for at energien havner i landet med 
 sandfarge. Flytt ``||scene:place energi on top of random ||`` inn i den 
 øverste av de ledige plassene i ``|| logic:if then else||``-blokken. 
@@ -274,7 +274,7 @@ sandfarge. Flytt ``||scene:place energi on top of random ||`` inn i den
 }
 ```
 
-### Steg 4
+### Steg 5
 Det som legges under ``||logic:else||`` vil få 20 % sannsynlighet. 
 Kopier ``||scene:place energi on top of random ||`` og legg den under ``||logic:else||``.
 Flisen må endres til grønn. 
@@ -309,7 +309,7 @@ for (let index = 0; index < 100; index++) {
     }
 ```
 
-### Steg 5
+### Steg 6
 Nå skal vi plassere ``||sprite:mySprite||`` på samme måte. 
 Det skal være 20 % sannsynlighet for å starte spillet i landet med
 sandfarge, og 80 % for å starte i det grønne landet. 
@@ -349,7 +349,7 @@ if (Math.percentChance(20)) {
 }
 ```
 
-### Steg 6
+### Steg 7
 Flytt ``||scene:place mySprite on top of random...||`` 
 til den øverste ledige plassen i ``||logic:if then else ||``. Da blir det 20 % 
 sannsynlighet for at spillfiguren havner i det sandfargete landet.
@@ -382,7 +382,7 @@ if (Math.percentChance(20)) {
 }
 ```
 
-### Steg 7
+### Steg 8
 Til slutt skal du ha med at du må få 20 poeng eller mer for å vinne spillet.
 Begynn med å legge inn  ``||info:on countdown end||``  fra ``||Info:Info||``-menyen. 
 Legg inn en ``||logic:if then else||``-blokk i ``||info:on countdown end||``. 
@@ -396,7 +396,7 @@ info.onCountdownEnd(function () {
     }
 ```
 
-### Steg 8
+### Steg 9
 Der hvor det står ``||logic:true||`` skal vi nå sammenligne to tall. 
 I ``||logic:Logic||``-menyen finner du ``||logic:0 < 0||``, denne 
 legges inn der det står ``||logic:true||``.
@@ -415,7 +415,7 @@ info.onCountdownEnd(function () {
     }
 
 ```
-### Steg 9
+### Steg 10
 Nå gjenstår det bare å hente to ``||game:game over||``-blokker 
 fra ``||game:Game||``-menyen. Disse legges inn under ``||logic:if||`` 
 og ``||logic:else||``. 
@@ -433,7 +433,7 @@ info.onCountdownEnd(function () {
 
 ```
 
-### Steg 10
+### Steg 11
 
 Bra jobba! Nå er du godt i gang med å programmere ditt eget spill😊
 Hvor mange poeng klarer du å få, og hvem er best i klassen?  

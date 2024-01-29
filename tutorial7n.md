@@ -177,11 +177,11 @@ info.startCountdown(30)
 
 # Prosjektiler - Samle energi på avstand
 ## Introduksjon
-### Introduksjon @unplugged
+### Steg 1: Introduksjon @unplugged
 
 Noen ganger er det fint å kunne hente poeng på avstand. Her får du et eksempel på hvordan spillfiguren din kan skyte prosjektiler for å samle energi! 
 
-### Steg 1
+### Steg 2
 
 Begynn med å hente en ``||controller:on A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den for seg selv på skjermen.
 
@@ -191,7 +191,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-### Steg 2
+### Steg 3
 
 Hent en ``||logic:if true then else||``-blokk fra ``||logic:Logic||``-menyen og legg den inni ``||controller:on A button pressed||``-blokken.
 
@@ -206,10 +206,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-### Steg 3
+### Steg 4
 
-Hent en ``||controller:is A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den der det står ``||logic:true||`` i ``||logic:if true then else||``-blokken.
-Endre ``||controller:is A button pressed||`` til ``||controller:is left button pressed||``.
+Hent en ``||controller:is A button pressed||``-blokk fra ``||controller:Controller||``-menyen og plasser den der det står ``||logic:true||``.
+Endre ``||controller:A||`` til ``||controller:left||``.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -222,10 +222,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-### Steg 4
+### Steg 5
 
-Hent en ``||sprites:set projectile to projectile from mySprite with vx 50 vy 50||`` fra ``||sprites:Sprites||``-menyen og legg den inn i det første gapet på ``||logic:if true then else||``-blokken.
-Endre vx til -200 og vy til 0. Du må skrive inn tallet -200 (slideren på blokken går bare til 100).
+Hent en ``||sprites:set projectile to projectile from mySprite with vx 50 vy 50||`` fra ``||sprites:Sprites||``-menyen og legg den inn i den første plassen på ``||logic:if true then else||``-blokken.
+Endre vx til -200 og vy til 0. (Du må skrive inn tallet -200 fordi slideren på blokken bare går til 100).
 Vx er farten i x-retningen. Når den er negativ går prosjektilet mot venstre. Vy er farten i y-retningen.
 
 ```blocks
@@ -256,10 +256,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-### Steg 5
+### Steg 6
 
-Klikk på det grå kvadratet på ``||sprites:set projectile to projectile from mySprite with vx -200 vy 0||``-blokken og tegn eller velg et prosjektil fra galleriet.
-I eksempleter prosjektilet en donut.
+Klikk på det grå kvadratet på ``||sprites:set projectile to projectile from mySprite||``-blokken og tegn eller velg et prosjektil fra galleriet.
+I eksemplet er prosjektilet en donut.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -289,9 +289,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-### Steg 6
+### Steg 7
 
-Klikk på det lille plusstegnet nede til høyre på ``||logic:if true then else||``-blokken, til du får tre ledige gap.
+Klikk på det lille plusstegnet nede til venstre på ``||logic:if true then else||``-blokken, til du får tre ledige plasser.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -325,10 +325,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-### Steg 7
+### Steg 8
 
 Kopier ``||controller:is left button pressed||`` og plasser den i neste ledige sekskant i ``||logic:if true then else||``-blokken.
-Endre ``||controller:is left button pressed||`` til ``||controller:is right button pressed||``.
+Endre ``||controller:left||`` til ``||controller:right||``.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -362,9 +362,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-### Steg 8
+### Steg 9
 
-Kopier blokken ``||sprites:set projectile to projectile from mySprite with vx -200 vy 0||`` inn i det nest øverste gapet i ``||logic:if true then else||``-blokken.
+Kopier blokken ``||sprites:set projectile to projectile from mySprite||`` inn i den neste ledige plassen.
 Endre den så det står ``||sprites:vx 200 vy 0||``.
 
 ```blocks
@@ -389,6 +389,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             . . . . . . . . . . . . . . . . 
             `, mySprite, -200, 0)
     } else if (controller.right.isPressed()) {
+        // @highlight
         projectile = sprites.createProjectileFromSprite(img`
             . . . . . . b b b b a a . . . . 
             . . . . b b d d d 3 3 3 a a . . 
@@ -415,9 +416,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-### Steg 9
+### Steg 10
 
-Hent eller kopier en ny ``||controller:is A button pressed||``-blokk og plasser den i sekskanten mellom andre og tredje gap.
+Hent eller kopier en ny ``||controller:is A button pressed||``-blokk og plasser den i neste ledige sekskant.
 Endre ``||controller:A||`` til ``||controller:down||``.
 
 ```blocks
@@ -469,9 +470,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-### Steg 10
+### Steg 11
 
-Kopier blokken ``||sprites:set projectile to projectile from mySprite with vx 200 vy 0||`` inn i det nest nederste gapet i ``||logic:if true then else||``-blokken.
+Kopier blokken ``||sprites:set projectile to projectile from mySprite||`` inn i den nest nederste plassen.
 Endre den så det står ``||sprites:vx 0 vy 200||``.
 Positiv y-retning er nedover på skjermen, derfor skytes prosjektilet nedover når farten i y-retning er positiv.
 
@@ -516,6 +517,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             . . . . . . . . . . . . . . . . 
             `, mySprite, 200, 0)
     } else if (controller.down.isPressed()) {
+        // @highlight
         projectile = sprites.createProjectileFromSprite(img`
             . . . . . . b b b b a a . . . . 
             . . . . b b d d d 3 3 3 a a . . 
@@ -540,11 +542,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-### Steg 11
+### Steg 12
 
-Kopier blokken ``||sprites:set projectile to projectile from mySprite with vx 0 vy 200||`` og legg kopien i det siste ledige gapet.
+Kopier blokken ``||sprites:set projectile to projectile from mySprite||`` og legg kopien i den siste ledige plassen.
 Endre blokken så det står ``||sprites:vx 0 vy -200||``.
-Når du ikke trykker på noen retning, eller trykker oppover, skyter spillfiguren din et prosjektil som går oppover på skjermen.
+Nå vil spillfiguren din skyte et prosjektil som går oppover på skjermen når den står stille eller går oppover.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -606,6 +608,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             . . . . . . . . . . . . . . . . 
             `, mySprite, 0, 200)
     } else {
+        // @highlight
         projectile = sprites.createProjectileFromSprite(img`
             . . . . . . b b b b a a . . . . 
             . . . . b b d d d 3 3 3 a a . . 
@@ -627,38 +630,50 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 ```
-### Steg 12
+### Steg 13
 
 Nå gjenstår hva som skal skje når prosjektilet treffer energien.
 Hent en ``||sprites:on sprite of kind player overlaps othersprite of kind player||``-blokk.
 Endre det første feltet der det står ``||sprites:Player||`` til ``||sprites:Projectile||`` og det andre feltet til ``||sprites:Food||``.
 
 ```blocks
+// @highlight
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
 	
 })
 ```
 
-### Steg 13
+### Steg 14
 
 Når du treffer en energisprite med et prosjektil, skal du nå få poeng og energien skal forsvinne.
 Hent en ``||info:change score by 1||``-blokk fra ``||info:Info||``-menyen og legg den inn i overlap-blokken.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
+    // @highlight
     info.changeScoreBy(1)
 })
 ```
 
-### Steg 14
-<p>Hent en ``||sprites:destroy mySprite||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den under ``||info:change score by 1||``-blokken.
-Dra variablen ``||variables:otherSprite||`` inn der det står ``||variables:mySprite||``.<br>
-Nå forsvinner energien når du skyter den, og du får poeng.<br>
-Det var alt! Nå vet du hvordan du lager prosjektiler. Gå gjerne inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.</b>
+### Steg 15
+Hent en ``||sprites:destroy mySprite||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den under ``||info:change score by 1||``-blokken.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
+    // @highlight
+    sprites.destroy(mySprite)
+})
+```
+### Steg 16
+Dra variablen ``||variables:otherSprite||`` inn der det står ``||variables:mySprite||``.
+Nå forsvinner energien når du skyter den, og du får poeng.
+Det var alt! Nå vet du hvordan du lager prosjektiler. Gå gjerne inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
+
+```blocks
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    // @highlight
     sprites.destroy(otherSprite)
 })
 ```

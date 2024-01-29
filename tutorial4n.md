@@ -179,11 +179,11 @@ info.startCountdown(30)
 
 # Lydeffekter - Lag lyd i spillet
 ## Introduksjon
-### Introduksjon @unplugged
+### Steg 1:  Introduksjon @unplugged
 
 Et dataspill blir litt flatt og kjedelig uten lydeffekter. La oss legge til noen!
 
-### Steg 1
+### Steg 2
 
 Legg til en lyd når spillfiguren plukker opp energi. Hent en ``||music:play sound||``-blokk fra ``||music:Music||``-menyen og plasser den inni ``||sprites:overlap||``-blokken som bestemmer hva som skjer når du fanger et lyn.
 Gjør det samme for havvind.
@@ -196,7 +196,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-### Steg 2
+### Steg 3
 
 Du kan velge mellom flere lyder om du trykker på den lille pilen ved siden av der det står ``||music:ba ding||`` i ``||music:play sound||``-blokken.
 Finn noen lyder du liker, og bruk forskjellige lyder for de to energitypene.
@@ -213,7 +213,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Fornybar, function (sprite, othe
 })
 ```
 
-### Steg 3
+### Steg 4
 
 Det var det hele! Å legge til lyd er ganske lett, ikke sant?
 Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.

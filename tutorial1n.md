@@ -154,7 +154,7 @@ info.startCountdown(30)
 
 # Lag en fornybar energikilde
 ## Introduksjon
-### Introduksjon @unplugged
+### Steg 1: Introduksjon @unplugged
 
 Vi fortsetter der vi slapp. Nå skal vi legge til en fornybar energikilde. La oss legge til havvind!
 
@@ -401,7 +401,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Fornybar, function (sprite, othe
 ```
 
 ### Steg 6
-Siden den nye energitypen vår er fornybar, ønsker vi ikke å fjerne ``||variables:havvind||`` helt når vi overlapper. I stedet for å bruke en ``||sprites:destroy otherSprite||``-blokk skal vi bruke en ``||scene:Place mySprite on top of random||``-blokk for å få den fornybare energien til å gjenoppstå et tilfeldig sted i havet. Husk å dra ``||variables:otherSprite||`` til der det står ``||variables:mySprite||``, endre kind til ``||sprites:Fornybar||`` og la det grå kvadratet være som det er.
+Siden den nye energitypen vår er fornybar, ønsker vi ikke å fjerne ``||variables:havvind||`` helt når vi overlapper.
+I stedet for å bruke en ``||sprites:destroy otherSprite||``-blokk skal vi bruke en ``||scene:Place mySprite on top of random||``-blokk for å få den fornybare energien til å gjenoppstå et tilfeldig sted i havet.
+Husk å dra ``||variables:otherSprite||`` til der det står ``||variables:mySprite||``, endre "kind" til ``||sprites:Fornybar||`` og la det grå kvadratet være som det er.
 
 ```blocks
 namespace SpriteKind {

@@ -179,12 +179,12 @@ info.startCountdown(30)
 
 # Miljøpåvirkning - Redd planeten!
 ## Introduksjon
-### Introduksjon @unplugged
-Hvordan påvirker forskjellige energikilder miljøet? Her er et forslag til hvordan man kan få spillet til å handle om å redde planeten.
+### Steg 1: Introduksjon @unplugged
+Hvordan påvirker forskjellige energikilder miljøet? Her er et forslag til hvordan du kan få spillet til å handle om å redde planeten.
 
-### Steg 1
+### Steg 2
 
-Nå skal vi gjøre det sånn at du (eller jorda) mister liv når du samler fossil energi.
+Nå skal vi gjøre det sånn at planeten mister liv når du samler fossil energi.
 Hent en ``||info:set life to 3||``-blokk fra ``||info:Info||``-menyen og plasser den nederst i ``||loops:on start||``.
 Endre 3 til 10.
 
@@ -351,7 +351,7 @@ info.startCountdown(30)
 info.setLife(10)
 ```
 
-### Steg 2
+### Steg 3
 
 Hent en ``||info:change life by -1||``-blokk fra ``||info:Info||``-menyen og plasser den inni ``||sprites:overlap||``-blokken som styrer hva som skjer når spilleren plukker opp et lyn.
 Nå representerer lynene fossilt brensel som påvirker miljøet negativt.
@@ -366,7 +366,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-### Steg 3
+### Steg 4
 
 I ditt eget spill kan du gjenta Steg 2 for alle ``||sprites:overlap||``-blokker som representerer fossile energikilder, dersom du har laget flere.
 Fornybare energikilder kan stå som de er, ettersom de ikke påvirker miljøet i like stor grad.
@@ -383,10 +383,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Fossil, function (sprite, otherS
 })
 ```
 
-### Steg 4
+### Steg 5
 
 Dersom du klarer å gjennomføre spillet uten at planeten går tom for liv, vil livene du har igjen bli lagt til poengsummen din.
-Hent en ``||info:set score to 0||``-blokk fra ``||info:Info||``-menyen og plasser den over ``||logic:if then else||``-blokken i ``||info:on countdown end||``-blokken.
+Over ``||logic:if then else||``-blokken i ``||info:on countdown end||`` legger du en ``||info:set score to 0||``-blokk fra ``||info:Info||``-menyen.
 
 ```block
 info.onCountdownEnd(function () {
@@ -400,7 +400,7 @@ info.onCountdownEnd(function () {
 })
 ```
 
-### Steg 5
+### Steg 6
 Nå skal du legge antall liv som gjenstår til poengsummen din.
 Da må du først hente en oval ``||math:0 + 0||``-blokk fra ``||math:Math||``-menyen og dra den inn i ``||info:set score to 0||``-blokken der det står 0.
 
@@ -416,8 +416,8 @@ info.onCountdownEnd(function () {
 })
 ```
 
-### Steg 6
-Nå må du legge sammen variabelverdiene for poeng og antall liv i den siste blokken du hentet.
+### Steg 7
+Nå må du legge sammen variabelverdiene for poeng og antall liv planeten har igjen.
 De finner du i ``||info:Info||``-menyen.
 Dra den ovale blokken ``||info:score||`` inn i det første runde feltet der det står 0, og blokken ``||info:life||`` inn i det andre feltet der det står 0.
 
@@ -433,17 +433,28 @@ info.onCountdownEnd(function () {
 })
 ```
 
-### Steg 7
+### Steg 8
 Hva skjer når planeten går tom for liv?
 Du trenger en ``||info:on life zero||``-blokk fra ``||info:Info||``-menyen for at noe skal skje når du går tom for liv.
 Sett inn en passende lyd fra ``||music:Music||``-menyen ved å bruke blokken ``||music:play sound ba ding until done||``.
-Velg en annen lyd som kan passe.
-Sett inn en ``||game:splash||``-blokk fra ``||game:Game||``-menyen med en passende tekst under ``||music:play sound ba ding until done||``-blokken.
+
+```blocks
+info.onLifeZero(function () {
+    //@highlight
+    music.play(music.melodyPlayable(music.wawawawaa), music.PlaybackMode.UntilDone)
+})
+```
+
+### Steg 9
+Legg til en passende tekst når planeten har 0 liv igjen.
+Hent en ``||game:splash||``-blokk fra ``||game:Game||``-menyen og plasser den under ``||music:play sound ba ding until done||``-blokken.
+Skriv inn teksten du vil bruke.
 Om du vil ha tekst på to linjer, klikker du på + bak det hvite feltet etter ``||game:splash||`` for å utvide blokken med en ny linje.
 
 ```blocks
 info.onLifeZero(function () {
     music.play(music.melodyPlayable(music.wawawawaa), music.PlaybackMode.UntilDone)
+    //@highlight
     game.splash("Energibruken din har ødelagt klimaet!", "Game Over")
 })
 ```
@@ -454,11 +465,11 @@ effects.confetti.startScreenEffect()
 game.over(false)
 ```
 
-### Steg 8
+### Steg 10
 
 Det var alt om miljøpåvirkning.
 Her er en ekstra liten utfordring:
-Noen handlinger har positiv effekt på miljøet. Hva med å tilføye noen få sprites som gir liv til planeten når du plukker dem opp? Kanskje plastsøppel i havet? Hvilke blokker kan du bruke for å få til dette?
-Eller er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
+Noen handlinger har positiv effekt på miljøet. Hva med å tilføye noen få sprites som gir liv til planeten når du plukker dem opp? Kanskje plastsøppel i havet?
+Eller er du klar for flere utfordringer? Sjekk [Kodekraft.no](https://kodekraft.no).
 
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
