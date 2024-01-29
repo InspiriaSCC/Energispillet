@@ -10,8 +10,9 @@
 * [Tutorial 2 - Animer spillfiguren din](https://arcade.makecode.com/#tutorial:github:InspiriaSCC/energispillet/tutorial2n)
 * [Tutorial 3 - Rivaler](https://arcade.makecode.com/#tutorial:github:InspiriaSCC/energispillet/tutorial3n)
 * [Tutorial 4 - Lydeffekter](https://arcade.makecode.com/#tutorial:github:InspiriaSCC/energispillet/tutorial4n)
-* [Tutorial 5 - Miljøpåvirkning](https://arcade.makecode.com/#tutorial:github:InspiriaSCC/energispillet/tutorial5n)
-* [Tutorial 5.1 - Alternativ Miljøpåvirkning](https://arcade.makecode.com/#tutorial:github:InspiriaSCC/energispillet/tutorial5n2)
+* [Tutorial 5 - Miljøpåvirkning første versjon](https://arcade.makecode.com/#tutorial:github:InspiriaSCC/energispillet/tutorial5n)
+* [Tutorial 5.1 - Miljøpåvirkning andre versjon](https://arcade.makecode.com/#tutorial:github:InspiriaSCC/energispillet/tutorial5n2)
+* [Tutorial 5.2 - Miljøpåvirkning](https://arcade.makecode.com/#tutorial:github:inspiriascc/energispillet/tutorial5n3)
 * [Tutorial 6 - Grensekontroll](https://arcade.makecode.com/#tutorial:github:InspiriaSCC/energispillet/tutorial6n)
 * [Tutorial 7 - Prosjektiler](https://arcade.makecode.com/#tutorial:github:inspiriascc/energispillet/tutorial7n)
 
