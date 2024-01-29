@@ -238,7 +238,7 @@ let grensevakt = sprites.create(img`
 Plasser grensevakten ved å legge til en ``||scene:place mySprite on top of random||``-blokk fra ``||scene:Scene||``-menyen under den nye sprite-blokken din.
 Endre ``||variables:mySprite||`` til ``||variables:grensevakt||`` og velg flisen med bilde av kontrollposten.
 
-![Plasser grensevakt](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/PlasserVakt.jpg)
+![Plasser grensevakt](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/PlasserGrensevakt.jpg)
 
 ### Steg 6
 
@@ -250,7 +250,7 @@ Klarer du å få til koden selv? Trykk på lyspæra for å se en mulig løsning.
 Det var alt! Godt jobba!
 Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
 
-![Vakt kaster ut spiller](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/VaktKasterUt.jpg)
+![Vakt kaster ut spiller](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/KastetUt.jpg)
 
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
 
