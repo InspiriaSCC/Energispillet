@@ -355,6 +355,7 @@ info.setLife(10)
 
 Hent en ``||info:change life by -1||``-blokk fra ``||info:Info||``-menyen og plasser den inni ``||sprites:overlap||``-blokken som styrer hva som skjer når spilleren plukker opp et lyn.
 Nå representerer lynene fossilt brensel som påvirker miljøet negativt.
+Endre ``||info:change score by 1||`` til ``||info:change score by 2||`` slik at du vinner litt mer poeng med å ta lyn, mot at du taper liv.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
@@ -376,7 +377,7 @@ namespace SpriteKind {
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Fossil, function (sprite, otherSprite) {
     otherSprite.destroy()
-    info.changeScoreBy(1)
+    info.changeScoreBy(2)
     // @highlight
     info.changeLifeBy(-1)
 })
