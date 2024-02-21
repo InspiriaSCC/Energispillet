@@ -185,7 +185,7 @@ info.startCountdown(30)
 Nå skal vi gjøre spillet litt mer utfordrende. La oss legge til en fiende! 
 
 ### Steg 2
-Begynn med å hente en ``||sprite:set mySprite2 to sprite of kind||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den nederst i ``||loops:on start||``.
+Begynn med å hente en ``||sprites:set mySprite2 to sprite of kind||``-blokk fra ``||sprites:Sprites||``-menyen og plasser den nederst i ``||loops:on start||``.
 Klikk på det grå kvadratet og velg en spillfigur fra galleriet.
 
 ```block
