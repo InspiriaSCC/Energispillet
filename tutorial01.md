@@ -497,6 +497,6 @@ info.startCountdown(30)
 ```
 ### Steg 10
 Ferdig! Spill spillet og se hvor mange poeng du får.
-Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave. 
+Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://www.vitensenter.no/kodekraft/kodeoekt/) og sjekk ut neste oppgave. 
 
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>

@@ -921,7 +921,7 @@ game.onUpdateInterval(300, function () {
 ### Steg 10
 
 Gratulerer! Det var det hele! Nå vet du hvordan du kan få spillfiguren din til å bevege seg på en litt mer levende måte.
-Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
+Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://www.vitensenter.no/kodekraft/kodeoekt/) og sjekk ut neste oppgave.
 
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
 

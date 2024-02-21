@@ -363,7 +363,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Fornybar, function (sprite, other
 Om du vil gjøre det enda mer interessant, kan du jo la fienden ta liv fra deg også.
 I så fall må du utforske hvordan du kan bruke ``||info:set life to||``-blokken i hovedkoden din og ``||info:change life by -1||``-blokker inni en ``||sprites:overlap||``-blokk.
 Du kan se et lite eksempel i hintet.
-Eller er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
+Eller er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://www.vitensenter.no/kodekraft/kodeoekt/) og sjekk ut neste oppgave.
 
 ```block
 namespace SpriteKind {

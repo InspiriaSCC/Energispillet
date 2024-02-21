@@ -668,7 +668,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, othe
 ### Steg 16
 Dra variablen ``||variables:otherSprite||`` inn der det står ``||variables:mySprite||``.
 Nå forsvinner energien når du skyter den, og du får poeng.
-Det var alt! Nå vet du hvordan du lager prosjektiler. Gå gjerne inn på [Kodekraft.no](https://kodekraft.no) og sjekk ut neste oppgave.
+Det var alt! Nå vet du hvordan du lager prosjektiler. Gå gjerne inn på [Kodekraft.no](https://www.vitensenter.no/kodekraft/kodeoekt/) og sjekk ut neste oppgave.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
