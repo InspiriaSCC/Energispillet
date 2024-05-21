@@ -175,7 +175,7 @@ for (let index = 0; index < 200; index++) {
 info.startCountdown(30)
 ```
 
-# Prosjektiler - Samle energi på avstand
+# Effektivisering - Samle energi på avstand
 ## Introduksjon
 ### Steg 1: Introduksjon @unplugged
 
