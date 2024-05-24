@@ -678,7 +678,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, othe
 ```
 
 ### Steg 17 @unplugged
-Så langt har du laget prosjektiler som kan gå i opp, ned og til begge sider, men hva om du vil ha dem til å gå på skrå?
+Så langt har du laget prosjektiler som kan gå opp, ned og til begge sider, men hva om du vil ha dem til å gå på skrå?
 Spillfiguren går på skrå over skjermen om du holder inne f.eks. knappene "up" og "right" samtidig.
 Nå kan du lære hvordan du kan få prosjektilene til å gjøre det samme.
 Den neste delen inneholder masse logikk og er vanskeligere enn det du har gjort til nå, så du får lov til å gi deg her om logikk ikke er din greie.
