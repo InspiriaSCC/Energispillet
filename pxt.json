@@ -23,7 +23,8 @@
         "tutorial-info-cache.json",
         "tutorial7n.md",
         "tutorial5n3.md",
-        "tutorial7nb.md"
+        "tutorial7nb.md",
+        "tutorial7nc.md"
     ],
     "testFiles": [
         "test.ts"
