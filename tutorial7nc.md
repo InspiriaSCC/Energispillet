@@ -2105,3 +2105,4 @@ Gratulerer! Dette var den vanskeligste tutorialen av dem alle!
 Nå vet du hvordan du lager prosjektiler, og hvordan du får dem til å fly i alle retninger ved hjelp av knappekombinasjoner.
 Gå gjerne inn på [Kodekraft.no](https://www.vitensenter.no/kodekraft/kodeoekt/) og sjekk ut neste oppgave.
 
+<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
