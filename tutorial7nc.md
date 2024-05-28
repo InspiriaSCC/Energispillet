@@ -189,6 +189,89 @@ Spillfiguren går på skrå over skjermen om du holder inne f.eks. knappene "up"
 Nå kan du lære hvordan du kan få prosjektilene til å gjøre det samme.
 I denne tutorialen lærer du å bruke litt mer avanserte logikkfunksjoner som lar deg gjøre litt mer komplekse ting i spillet.
 
+```ghost
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (controller.left.isPressed()) {
+        projectile = sprites.createProjectileFromSprite(img`
+            . . . . . . b b b b a a . . . . 
+            . . . . b b d d d 3 3 3 a a . . 
+            . . . b d d d 3 3 3 3 3 3 a a . 
+            . . b d d 3 3 3 3 3 3 3 3 3 a . 
+            . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+            . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+            b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+            b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+            b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+            a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+            a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+            a a 3 3 3 d d d a a 4 4 4 e e . 
+            . e a a a a a a 4 4 4 4 e e . . 
+            . . e e b b 4 4 4 4 b e e . . . 
+            . . . e e e e e e e e . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, mySprite, -200, 0)
+    } else if (controller.right.isPressed()) {
+        projectile = sprites.createProjectileFromSprite(img`
+            . . . . . . b b b b a a . . . . 
+            . . . . b b d d d 3 3 3 a a . . 
+            . . . b d d d 3 3 3 3 3 3 a a . 
+            . . b d d 3 3 3 3 3 3 3 3 3 a . 
+            . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+            . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+            b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+            b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+            b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+            a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+            a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+            a a 3 3 3 d d d a a 4 4 4 e e . 
+            . e a a a a a a 4 4 4 4 e e . . 
+            . . e e b b 4 4 4 4 b e e . . . 
+            . . . e e e e e e e e . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, mySprite, 200, 0)
+    } else if (controller.down.isPressed()) {
+        projectile = sprites.createProjectileFromSprite(img`
+            . . . . . . b b b b a a . . . . 
+            . . . . b b d d d 3 3 3 a a . . 
+            . . . b d d d 3 3 3 3 3 3 a a . 
+            . . b d d 3 3 3 3 3 3 3 3 3 a . 
+            . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+            . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+            b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+            b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+            b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+            a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+            a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+            a a 3 3 3 d d d a a 4 4 4 e e . 
+            . e a a a a a a 4 4 4 4 e e . . 
+            . . e e b b 4 4 4 4 b e e . . . 
+            . . . e e e e e e e e . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, mySprite, 0, 200)
+    } else {
+        // @highlight
+        projectile = sprites.createProjectileFromSprite(img`
+            . . . . . . b b b b a a . . . . 
+            . . . . b b d d d 3 3 3 a a . . 
+            . . . b d d d 3 3 3 3 3 3 a a . 
+            . . b d d 3 3 3 3 3 3 3 3 3 a . 
+            . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+            . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+            b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+            b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+            b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+            a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+            a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+            a a 3 3 3 d d d a a 4 4 4 e e . 
+            . e a a a a a a 4 4 4 4 e e . . 
+            . . e e b b 4 4 4 4 b e e . . . 
+            . . . e e e e e e e e . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, mySprite, 0, -200)
+    }
+})
+```
+
 ### Steg 2
 Det første du må gjøre er å lage 4 nye gap i ``||logic:if-then-else||``-blokken i ``||controller:on A button pressed||`` fra forrige tutorial.
 Trykk på det lille plusstegnet nederst til venstre i ``||logic:if-then-else||``-blokken 4 ganger.
