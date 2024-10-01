@@ -2597,5 +2597,5 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ### Steg 36
 Gratulerer! Dette var den vanskeligste tutorialen av dem alle!
 Nå vet du hvordan du lager prosjektiler, og hvordan du får dem til å fly i alle retninger ved hjelp av knappekombinasjoner.
-Gå gjerne inn på [Kodekraft.no](https://www.vitensenter.no/kodekraft/kodeoekt/) og sjekk ut neste oppgave.
+Gå gjerne inn på [Kodekraft.no](https://kodekraft.no/undervisningsopplegg/#bonusoppgaver) og sjekk ut neste oppgave.
 

@@ -248,7 +248,7 @@ Spillfiguren skal komme forbi hvis den har klart å samle nok energi.
 Hvis ikke blir den slengt tilbake til et tilfeldig sted, kanskje helst der det er lite energi.
 Klarer du å få til koden selv? Trykk på lyspæra for å se en mulig løsning.
 Det var alt! Godt jobba!
-Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://www.vitensenter.no/kodekraft/kodeoekt/) og sjekk ut neste oppgave.
+Er du klar for neste utfordring? Gå inn på [Kodekraft.no](https://kodekraft.no/undervisningsopplegg/#bonusoppgaver) og sjekk ut neste oppgave.
 
 ![Vakt kaster ut spiller](https://raw.githubusercontent.com/InspiriaSCC/energispillet/master/assets/KastetUt.jpg)
 

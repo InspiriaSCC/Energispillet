@@ -470,6 +470,6 @@ game.over(false)
 Det var alt om miljøpåvirkning.
 Her er en ekstra liten utfordring:
 Noen handlinger har positiv effekt på miljøet. Hva med å tilføye noen få sprites som gir liv til planeten når du plukker dem opp? Kanskje plastsøppel i havet?
-Eller er du klar for flere utfordringer? Sjekk [Kodekraft.no](https://www.vitensenter.no/kodekraft/kodeoekt/).
+Eller er du klar for flere utfordringer? Sjekk [Kodekraft.no](https://kodekraft.no/undervisningsopplegg/#bonusoppgaver).
 
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
